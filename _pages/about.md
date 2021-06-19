@@ -12,12 +12,13 @@ permalink: /about/
 
 ## 프로그래밍 스킬
 `-` Python
+
 `-` R
+
 `-` C / C++
 
 ## 봉사활동
 `-` ㅁㄴㅇㄹ
-
 
 #### This website is powered by **[WebCV](https://star77sa.github.io/)** [^1].
 

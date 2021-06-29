@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Dacon 데이터 분석 | kyeong-soo</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Dacon 데이터 분석" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개인 공부용 요약노트" />
+<meta property="og:description" content="개인 공부용 요약노트" />
+<link rel="canonical" href="https://star77sa.github.io/TIL-Blog/jupyter/python/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html" />
+<meta property="og:url" content="https://star77sa.github.io/TIL-Blog/jupyter/python/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html" />
+<meta property="og:site_name" content="kyeong-soo" />
+<meta property="og:image" content="https://star77sa.github.io/TIL-Blog/images/chart-preview.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-29T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"개인 공부용 요약노트","url":"https://star77sa.github.io/TIL-Blog/jupyter/python/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://star77sa.github.io/TIL-Blog/jupyter/python/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html"},"headline":"Dacon 데이터 분석","dateModified":"2021-06-29T00:00:00-05:00","datePublished":"2021-06-29T00:00:00-05:00","image":"https://star77sa.github.io/TIL-Blog/images/chart-preview.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/TIL-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://star77sa.github.io/TIL-Blog/feed.xml" title="kyeong-soo" /><link rel="shortcut icon" type="image/x-icon" href="/TIL-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/TIL-Blog/">kyeong-soo</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/TIL-Blog/about/">About Me</a><a class="page-link" href="/TIL-Blog/search/">Search</a><a class="page-link" href="/TIL-Blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Dacon 데이터 분석</h1><p class="page-description">개인 공부용 요약노트</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-29T00:00:00-05:00" itemprop="datePublished">
+        Jun 29, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      2 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/TIL-Blog/categories/#jupyter">jupyter</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/TIL-Blog/categories/#Python">Python</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/star77sa/TIL-Blog/tree/master/_notebooks/2021-06-29-데이터 분석.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/TIL-Blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/star77sa/TIL-Blog/master?filepath=_notebooks%2F2021-06-29-%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/TIL-Blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/star77sa/TIL-Blog/blob/master/_notebooks/2021-06-29-데이터 분석.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/TIL-Blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#```으니바보">```으니바보 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#라이브러리-불러오기">라이브러리 불러오기 </a></li>
+<li class="toc-entry toc-h2"><a href="#데이터-불러오기">데이터 불러오기 </a></li>
+<li class="toc-entry toc-h2"><a href="#데이터-정보-관찰하기">데이터 정보 관찰하기 </a></li>
+<li class="toc-entry toc-h2"><a href="#데이터-행열-갯수-관찰">데이터 행열 갯수 관찰 </a></li>
+<li class="toc-entry toc-h2"><a href="#결측치-확인">결측치 확인 </a></li>
+<li class="toc-entry toc-h2"><a href="#결측치-전처리">결측치 전처리 </a></li>
+<li class="toc-entry toc-h2"><a href="#모델-훈련">모델 훈련 </a></li>
+<li class="toc-entry toc-h2"><a href="#테스트-파일-예측">테스트 파일 예측 </a></li>
+<li class="toc-entry toc-h2"><a href="#submission-파일-생성">submission 파일 생성 </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-06-29-데이터 분석.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="```으니바보">
+<a class="anchor" href="#%60%60%60%EC%9C%BC%EB%8B%88%EB%B0%94%EB%B3%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>```으니바보</code><a class="anchor-link" href="#%60%60%60%EC%9C%BC%EB%8B%88%EB%B0%94%EB%B3%B4"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="라이브러리-불러오기">
+<a class="anchor" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>라이브러리 불러오기<a class="anchor-link" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"> </a>
+</h2>
+<ul>
+<li>Pandas 와 Scikit-learn 라이브러리를 불러오세요</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-불러오기">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 불러오기<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"> </a>
+</h2>
+<ul>
+<li>train.csv 와 test.csv 를 DataFrame 클래스로 불러오세요</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/train.csv'</span><span class="p">)</span> 
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/test.csv'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-정보-관찰하기">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%B3%B4-%EA%B4%80%EC%B0%B0%ED%95%98%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 정보 관찰하기<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%B3%B4-%EA%B4%80%EC%B0%B0%ED%95%98%EA%B8%B0"> </a>
+</h2>
+<ul>
+<li>head() 를 사용해 데이터 정보를 관찰하세요</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-행열-갯수-관찰">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%96%89%EC%97%B4-%EA%B0%AF%EC%88%98-%EA%B4%80%EC%B0%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 행열 갯수 관찰<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%96%89%EC%97%B4-%EA%B0%AF%EC%88%98-%EA%B4%80%EC%B0%B0"> </a>
+</h2>
+<ul>
+<li>shape 를 사용해 데이터 크기를 관찰하세요</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+<pre><code>(1459, 11)</code></pre>
+<div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+<pre><code>(715, 10)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="결측치-확인">
+<a class="anchor" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%ED%99%95%EC%9D%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>결측치 확인<a class="anchor-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%ED%99%95%EC%9D%B8"> </a>
+</h2>
+<ul>
+<li>dropna() 를 사용해 train 데이터는 결측치를 제거하고</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1459 entries, 0 to 1458
+Data columns (total 11 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   id                      1459 non-null   int64  
+ 1   hour                    1459 non-null   int64  
+ 2   hour_bef_temperature    1457 non-null   float64
+ 3   hour_bef_precipitation  1457 non-null   float64
+ 4   hour_bef_windspeed      1450 non-null   float64
+ 5   hour_bef_humidity       1457 non-null   float64
+ 6   hour_bef_visibility     1457 non-null   float64
+ 7   hour_bef_ozone          1383 non-null   float64
+ 8   hour_bef_pm10           1369 non-null   float64
+ 9   hour_bef_pm2.5          1342 non-null   float64
+ 10  count                   1459 non-null   float64
+dtypes: float64(9), int64(2)
+memory usage: 125.5 KB</code></pre>
+<div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 715 entries, 0 to 714
+Data columns (total 10 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   id                      715 non-null    int64  
+ 1   hour                    715 non-null    int64  
+ 2   hour_bef_temperature    714 non-null    float64
+ 3   hour_bef_precipitation  714 non-null    float64
+ 4   hour_bef_windspeed      714 non-null    float64
+ 5   hour_bef_humidity       714 non-null    float64
+ 6   hour_bef_visibility     714 non-null    float64
+ 7   hour_bef_ozone          680 non-null    float64
+ 8   hour_bef_pm10           678 non-null    float64
+ 9   hour_bef_pm2.5          679 non-null    float64
+dtypes: float64(8), int64(2)
+memory usage: 56.0 KB</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="결측치-전처리">
+<a class="anchor" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%A0%84%EC%B2%98%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>결측치 전처리<a class="anchor-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%A0%84%EC%B2%98%EB%A6%AC"> </a>
+</h2>
+<ul>
+<li>dropna() 를 사용해 train 데이터는 결측치를 제거하고</li>
+<li>fillna() 를 사용해 test 데이터 결측치는 0 으로 대체하세요.</li>
+<li>그리고 결측치의 갯수를 출력하여 확안하세요.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+
+<pre><code>id                        0
+hour                      0
+hour_bef_temperature      0
+hour_bef_precipitation    0
+hour_bef_windspeed        0
+hour_bef_humidity         0
+hour_bef_visibility       0
+hour_bef_ozone            0
+hour_bef_pm10             0
+hour_bef_pm2.5            0
+count                     0
+dtype: int64</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="모델-훈련">
+<a class="anchor" href="#%EB%AA%A8%EB%8D%B8-%ED%9B%88%EB%A0%A8" aria-hidden="true"><span class="octicon octicon-link"></span></a>모델 훈련<a class="anchor-link" href="#%EB%AA%A8%EB%8D%B8-%ED%9B%88%EB%A0%A8"> </a>
+</h2>
+<ul>
+<li>train 데이터의 count 피쳐를 뺀 것을 X_train 으로 할당하세요.</li>
+<li>train 데이터의 count 피쳐만을 가진 것을 Y_train 으로 할당하세요.</li>
+<li>회귀의사결정나무를 선언하고 fit() 으로 훈련시키세요.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'count'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+</pre></div>
+
+<pre><code>DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse', max_depth=None,
+                      max_features=None, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=1, min_samples_split=2,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=None, splitter='best')</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="테스트-파일-예측">
+<a class="anchor" href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EC%98%88%EC%B8%A1" aria-hidden="true"><span class="octicon octicon-link"></span></a>테스트 파일 예측<a class="anchor-link" href="#%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EC%98%88%EC%B8%A1"> </a>
+</h2>
+<ul>
+<li>predict() 을 이용해 test data 를 훈련한 모델로 예측한 data array 를 생성하세요.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="submission-파일-생성">
+<a class="anchor" href="#submission-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1" aria-hidden="true"><span class="octicon octicon-link"></span></a>submission 파일 생성<a class="anchor-link" href="#submission-%ED%8C%8C%EC%9D%BC-%EC%83%9D%EC%84%B1"> </a>
+</h2>
+<ul>
+<li>submission.csv 를 불러오세요.</li>
+<li>submission df 의 count 피쳐에 예측한 결과를 덧입히세요.</li>
+<li>submission df 를 to_csv() 를 이용해 csv 을 생성하세요. *index=False) </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">submission</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/submission.csv'</span><span class="p">)</span>
+<span class="n">submission</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred</span>
+<span class="n">submission</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'sub.csv'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="star77sa/TIL-Blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/TIL-Blog/jupyter/python/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/TIL-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/TIL-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/TIL-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/star77sa" title="star77sa"><svg class="svg-icon grey"><use xlink:href="/TIL-Blog/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

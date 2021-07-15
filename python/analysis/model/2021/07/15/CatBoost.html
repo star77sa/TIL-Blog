@@ -139,6 +139,15 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#CatBoost-특징">CatBoost 특징 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Great-quality-without-parameter-tuning">Great quality without parameter tuning </a></li>
+<li class="toc-entry toc-h2"><a href="#Categorical-features-support">Categorical features support </a></li>
+<li class="toc-entry toc-h2"><a href="#Fast-and-scalable-GPU-version">Fast and scalable GPU version </a></li>
+<li class="toc-entry toc-h2"><a href="#Improved-accuracy">Improved accuracy </a></li>
+<li class="toc-entry toc-h2"><a href="#Fast-prediction">Fast prediction </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#모델-Feature-중요도-탐색">모델 Feature 중요도 탐색 </a></li>
 </ul><!--
 #################################################
@@ -149,6 +158,165 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="CatBoost-특징">
+<a class="anchor" href="#CatBoost-%ED%8A%B9%EC%A7%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>CatBoost 특징<a class="anchor-link" href="#CatBoost-%ED%8A%B9%EC%A7%95"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Great-quality-without-parameter-tuning">
+<a class="anchor" href="#Great-quality-without-parameter-tuning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Great quality without parameter tuning<a class="anchor-link" href="#Great-quality-without-parameter-tuning"> </a>
+</h2>
+<ul>
+<li>Reduce time spent on parameter tuning, because CatBoost provides great results with default parameters</li>
+</ul>
+<h2 id="Categorical-features-support">
+<a class="anchor" href="#Categorical-features-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Categorical features support<a class="anchor-link" href="#Categorical-features-support"> </a>
+</h2>
+<ul>
+<li>Improve your training results with CatBoost that allows you to use non-numeric factors, instead of having to pre-process your data or spend time and effort turning it to numbers.</li>
+</ul>
+<h2 id="Fast-and-scalable-GPU-version">
+<a class="anchor" href="#Fast-and-scalable-GPU-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fast and scalable GPU version<a class="anchor-link" href="#Fast-and-scalable-GPU-version"> </a>
+</h2>
+<ul>
+<li>Train your model on a fast implementation of gradient-boosting algorithm for GPU. Use a multi-card configuration for large datasets.</li>
+</ul>
+<h2 id="Improved-accuracy">
+<a class="anchor" href="#Improved-accuracy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Improved accuracy<a class="anchor-link" href="#Improved-accuracy"> </a>
+</h2>
+<ul>
+<li>Reduce overfitting when constructing your models with a novel gradient-boosting scheme.</li>
+</ul>
+<h2 id="Fast-prediction">
+<a class="anchor" href="#Fast-prediction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fast prediction<a class="anchor-link" href="#Fast-prediction"> </a>
+</h2>
+<ul>
+<li>Apply your trained model quickly and efficiently even to latency-critical tasks using CatBoost's model applier</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="err">```</span><span class="n">python</span>
+<span class="k">class</span> <span class="nc">CatBoostRegressor</span><span class="p">(</span><span class="n">iterations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">learning_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">l2_leaf_reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">model_size_reg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">rsm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">loss_function</span><span class="o">=</span><span class="s1">'RMSE'</span><span class="p">,</span>
+                        <span class="n">border_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">feature_border_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">per_float_feature_quantization</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">input_borders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">output_borders</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">fold_permutation_block</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">od_pval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">od_wait</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">od_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">nan_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">counter_calc_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">leaf_estimation_iterations</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">leaf_estimation_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">thread_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">random_seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">use_best_model</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">best_model_min_trees</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">silent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">logging_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">metric_period</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">ctr_leaf_count_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">store_all_simple_ctr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">max_ctr_complexity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">has_time</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">allow_const_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">one_hot_max_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">random_strength</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">ignored_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">train_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">custom_metric</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">eval_metric</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">bagging_temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">save_snapshot</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">snapshot_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">snapshot_interval</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">fold_len_multiplier</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">used_ram_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">gpu_ram_part</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">pinned_memory_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">allow_writing_files</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">final_ctr_computation_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">approx_on_full_history</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">boosting_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">simple_ctr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">combinations_ctr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">per_feature_ctr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">ctr_target_border_count</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">task_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">device_config</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                        
+                        <span class="n">devices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">bootstrap_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">subsample</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>                        
+                        <span class="n">sampling_unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">dev_score_calc_obj_block_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">max_depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">n_estimators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">num_boost_round</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">num_trees</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">colsample_bylevel</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">reg_lambda</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">objective</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">eta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">max_bin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">gpu_cat_features_storage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">data_partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">metadata</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">early_stopping_rounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">cat_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">grow_policy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">min_data_in_leaf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">min_child_samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">max_leaves</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">num_leaves</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">score_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">leaf_estimation_backtracking</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">ctr_history_unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">monotone_constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">feature_weights</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">penalties_coefficient</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">first_feature_use_penalties</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">model_shrink_rate</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">model_shrink_mode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">langevin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">diffusion_temperature</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">posterior_sampling</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">boost_from_average</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

@@ -15,8 +15,8 @@
         ,"post1": {
             "title": "CatBoost",
             "content": "&#47784;&#45944; Feature &#51473;&#50836;&#46020; &#53456;&#49353; . In short, you can do something like . pd.DataFrame({&#39;feature_importance&#39;: model.get_feature_importance(train_pool), &#39;feature_names&#39;: x_val.columns}).sort_values(by=[&#39;feature_importance&#39;], ascending=False) . you can also make a function like . def plot_feature_importance(importance,names,model_type): #Create arrays from feature importance and feature names feature_importance = np.array(importance) feature_names = np.array(names) #Create a DataFrame using a Dictionary data={&#39;feature_names&#39;:feature_names,&#39;feature_importance&#39;:feature_importance} fi_df = pd.DataFrame(data) #Sort the DataFrame in order decreasing feature importance fi_df.sort_values(by=[&#39;feature_importance&#39;], ascending=False,inplace=True)) #Define size of bar plot plt.figure(figsize=(10,8)) #Plot Searborn bar chart sns.barplot(x=fi_df[&#39;feature_importance&#39;], y=fi_df[&#39;feature_names&#39;]) #Add chart labels plt.title(model_type + &#39;FEATURE IMPORTANCE&#39;) plt.xlabel(&#39;FEATURE IMPORTANCE&#39;) plt.ylabel(&#39;FEATURE NAMES&#39;) . and plot the feature importance from different boosting algorithm . #plot the xgboost result plot_feature_importance(xgb_model.feature_importances_,train.columns,&#39;XG BOOST&#39;) #plot the catboost result plot_feature_importance(cb_model.get_feature_importance(),train.columns,&#39;CATBOOST&#39;) .",
-            "url": "https://star77sa.github.io/TIL-Blog/dataanalysis/model/2021/07/15/CatBoost.html",
-            "relUrl": "/dataanalysis/model/2021/07/15/CatBoost.html",
+            "url": "https://star77sa.github.io/TIL-Blog/python/analysis/model/2021/07/15/CatBoost.html",
+            "relUrl": "/python/analysis/model/2021/07/15/CatBoost.html",
             "date": " • Jul 15, 2021"
         }
         

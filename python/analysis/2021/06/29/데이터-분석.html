@@ -4,12 +4,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Dacon 데이터 분석 | kyeong-soo</title>
+<title>데이터 분석 | kyeong-soo</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Dacon 데이터 분석" />
+<meta property="og:title" content="데이터 분석" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="개인 공부용 요약노트" />
-<meta property="og:description" content="개인 공부용 요약노트" />
+<meta name="description" content="데이콘 대회 참여하며 알게된 것들 정리." />
+<meta property="og:description" content="데이콘 대회 참여하며 알게된 것들 정리." />
 <link rel="canonical" href="https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html" />
 <meta property="og:url" content="https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html" />
 <meta property="og:site_name" content="kyeong-soo" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-06-29T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"개인 공부용 요약노트","url":"https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html"},"headline":"Dacon 데이터 분석","dateModified":"2021-06-29T00:00:00-05:00","datePublished":"2021-06-29T00:00:00-05:00","image":"https://star77sa.github.io/TIL-Blog/images/chart-preview.png","@context":"https://schema.org"}</script>
+{"description":"데이콘 대회 참여하며 알게된 것들 정리.","url":"https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://star77sa.github.io/TIL-Blog/python/analysis/2021/06/29/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D.html"},"headline":"데이터 분석","dateModified":"2021-06-29T00:00:00-05:00","datePublished":"2021-06-29T00:00:00-05:00","image":"https://star77sa.github.io/TIL-Blog/images/chart-preview.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/TIL-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://star77sa.github.io/TIL-Blog/feed.xml" title="kyeong-soo" /><link rel="shortcut icon" type="image/x-icon" href="/TIL-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Dacon 데이터 분석</h1><p class="page-description">개인 공부용 요약노트</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-29T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">데이터 분석</h1><p class="page-description">데이콘 대회 참여하며 알게된 것들 정리.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-29T00:00:00-05:00" itemprop="datePublished">
         Jun 29, 2021
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -138,7 +138,6 @@ window.onload = wrap_img;
     <ul class="section-nav">
 <li class="toc-entry toc-h2"><a href="#라이브러리-불러오기">라이브러리 불러오기 </a></li>
 <li class="toc-entry toc-h2"><a href="#데이터-불러오기">데이터 불러오기 </a></li>
-<li class="toc-entry toc-h2"><a href="#데이터-정보-관찰하기">데이터 정보 관찰하기 </a></li>
 <li class="toc-entry toc-h2"><a href="#데이터-행열-갯수-관찰">데이터 행열 갯수 관찰 </a></li>
 <li class="toc-entry toc-h2"><a href="#결측치-확인">결측치 확인 </a></li>
 <li class="toc-entry toc-h2"><a href="#결측치-전처리">결측치 전처리 </a>
@@ -150,6 +149,23 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#모델-훈련">모델 훈련 </a></li>
 <li class="toc-entry toc-h2"><a href="#테스트-파일-예측">테스트 파일 예측 </a></li>
 <li class="toc-entry toc-h2"><a href="#submission-파일-생성">submission 파일 생성 </a></li>
+<li class="toc-entry toc-h1"><a href="#2021.07.24-추가">2021.07.24 추가 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#데이터-수정">데이터 수정 </a></li>
+<li class="toc-entry toc-h2"><a href="#데이터-추출,-인덱싱">데이터 추출, 인덱싱 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#df.groupby()">df.groupby() </a></li>
+<li class="toc-entry toc-h3"><a href="#df.query">df.query </a></li>
+<li class="toc-entry toc-h3"><a href="#df.sort_values()">df.sort_values() </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#특정-데이터-드랍">특정 데이터 드랍 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#df.drop()">df.drop() </a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -200,29 +216,6 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/train.csv'</span><span class="p">)</span> 
 <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/test.csv'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="데이터-정보-관찰하기">
-<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%B3%B4-%EA%B4%80%EC%B0%B0%ED%95%98%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 정보 관찰하기<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EB%B3%B4-%EA%B4%80%EC%B0%B0%ED%95%98%EA%B8%B0"> </a>
-</h2>
-<ul>
-<li>head() 를 사용해 데이터 정보를 관찰하세요</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="n">test</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -473,6 +466,194 @@ dtype: int64</code></pre>
 <div class="highlight"><pre><span></span><span class="n">submission</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/submission.csv'</span><span class="p">)</span>
 <span class="n">submission</span><span class="p">[</span><span class="s1">'count'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pred</span>
 <span class="n">submission</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'sub.csv'</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2021.07.24-추가">
+<a class="anchor" href="#2021.07.24-%EC%B6%94%EA%B0%80" aria-hidden="true"><span class="octicon octicon-link"></span></a>2021.07.24 추가<a class="anchor-link" href="#2021.07.24-%EC%B6%94%EA%B0%80"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-수정">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 수정<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95"> </a>
+</h2>
+<ul>
+<li>특정열의 특정행 값 바꾸기</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'석식계'</span><span class="p">][</span><span class="mi">973</span><span class="p">]</span> <span class="o">=</span> <span class="mf">479.8605851979346</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="데이터-추출,-인덱싱">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C,-%EC%9D%B8%EB%8D%B1%EC%8B%B1" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 추출, 인덱싱<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%B6%94%EC%B6%9C,-%EC%9D%B8%EB%8D%B1%EC%8B%B1"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.groupby()">
+<a class="anchor" href="#df.groupby()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.groupby()<a class="anchor-link" href="#df.groupby()"> </a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'년'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s1">'중식계'</span><span class="p">,</span><span class="s1">'석식계'</span><span class="p">]]</span>
+</pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>중식계</th>
+<th>석식계</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>년</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2016</td>
+<td>932.792952</td>
+<td>519.418502</td>
+</tr>
+<tr>
+<td>2017</td>
+<td>897.614754</td>
+<td>459.015822</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>882.903766</td>
+<td>465.547534</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>850.512195</td>
+<td>447.336832</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>882.267241</td>
+<td>432.736468</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>1009.705882</td>
+<td>396.588235</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.query">
+<a class="anchor" href="#df.query" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.query<a class="anchor-link" href="#df.query"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.sort_values()">
+<a class="anchor" href="#df.sort_values()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.sort_values()<a class="anchor-link" href="#df.sort_values()"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'월&lt;4 &amp; 월&gt;1 &amp; 년 == 2020'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">'중식계'</span><span class="p">]</span>
+</pre></div>
+
+<pre><code>952.4285714285714</code></pre>
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">'년&gt;2016'</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'월'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">'중식계'</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>월
+11    815.963415
+12    834.473684
+8     838.253012
+7     839.523256
+6     840.333333
+5     849.460526
+4     880.225000
+10    894.666667
+9     901.842857
+1     934.278351
+3     952.829268
+2     998.042857
+Name: 중식계, dtype: float64</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="특정-데이터-드랍">
+<a class="anchor" href="#%ED%8A%B9%EC%A0%95-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%93%9C%EB%9E%8D" aria-hidden="true"><span class="octicon octicon-link"></span></a>특정 데이터 드랍<a class="anchor-link" href="#%ED%8A%B9%EC%A0%95-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%93%9C%EB%9E%8D"> </a>
+</h2>
+<h3 id="df.drop()">
+<a class="anchor" href="#df.drop()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.drop()<a class="anchor-link" href="#df.drop()"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>특정 행 데이터 드랍</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">index</span><span class="p">[[</span><span class="mi">204</span><span class="p">,</span>  <span class="mi">224</span><span class="p">,</span>  <span class="mi">244</span><span class="p">,</span>  <span class="mi">262</span><span class="p">,</span>  <span class="mi">281</span><span class="p">,</span>  <span class="mi">306</span><span class="p">,</span>  <span class="mi">327</span><span class="p">,</span>  <span class="mi">346</span><span class="p">,</span>  <span class="mi">366</span><span class="p">,</span>  <span class="mi">392</span><span class="p">,</span>  <span class="mi">410</span><span class="p">,</span> <span class="mi">828</span><span class="p">,</span>  <span class="mi">853</span><span class="p">,</span>  <span class="mi">872</span><span class="p">,</span>  <span class="mi">890</span><span class="p">,</span>  <span class="mi">912</span><span class="p">,</span>  <span class="mi">932</span><span class="p">,</span>  <span class="mi">955</span><span class="p">,</span>  <span class="mi">973</span><span class="p">,</span>  <span class="mi">993</span><span class="p">,</span> <span class="mi">1166</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>특정 열 데이터 드랍</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">'열 이름'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
 </div>

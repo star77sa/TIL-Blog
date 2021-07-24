@@ -5,20 +5,22 @@ permalink: /about/
 ---
 
 ## 수상
-`-` 장학그...
+`-` 
 
 ## 프로젝트
-`-` ㅁㄴㅇㄹ
+`-` [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
+
+`-` [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
 
 ## 프로그래밍 스킬
-`-` Python
+`-` `Python`
 
 `-` R
 
 `-` C / C++
 
-## 봉사활동
-`-` ㅁㄴㅇㄹ
+## 대외활동
+`-` 티클리안 서포터즈 1기 (2020.02 ~ 2020.03)
 
 #### This website is powered by **[WebCV](https://star77sa.github.io/)** [^1].
 

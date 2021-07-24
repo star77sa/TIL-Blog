@@ -136,16 +136,36 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h1"><a href="#2021.06.29">2021.06.29 </a>
+<li class="toc-entry toc-h1"><a href="#2021.06.29">2021.06.29 </a></li>
+<li class="toc-entry toc-h1"><a href="#EDA">EDA </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#라이브러리-불러오기">라이브러리 불러오기 </a></li>
-<li class="toc-entry toc-h2"><a href="#데이터-불러오기">데이터 불러오기 </a></li>
-<li class="toc-entry toc-h2"><a href="#데이터-행열-갯수-관찰">데이터 행열 갯수 관찰 </a></li>
-<li class="toc-entry toc-h2"><a href="#결측치-확인">결측치 확인 </a></li>
+<li class="toc-entry toc-h2"><a href="#데이터-불러오기">데이터 불러오기 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#pd.read_csv()">pd.read_csv() </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#데이터-행열-갯수-관찰">데이터 행열 갯수 관찰 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#df.shape">df.shape </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#결측치-확인">결측치 확인 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#df.info()">df.info() </a></li>
+<li class="toc-entry toc-h3"><a href="#df['a'].value_counts()">df[&#39;a&#39;].value_counts() </a></li>
+<li class="toc-entry toc-h3"><a href="#df['a'].unique()">df[&#39;a&#39;].unique() </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#전처리">전처리 </a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#결측치-전처리">결측치 전처리 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#결측치-대체평균">결측치 대체평균 </a></li>
 <li class="toc-entry toc-h3"><a href="#결측치-대체보간">결측치 대체보간 </a></li>
+<li class="toc-entry toc-h3"><a href="#pd.Series.map()">pd.Series.map() </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#모델-훈련">모델 훈련 </a></li>
@@ -196,6 +216,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="EDA">
+<a class="anchor" href="#EDA" aria-hidden="true"><span class="octicon octicon-link"></span></a>EDA<a class="anchor-link" href="#EDA"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="라이브러리-불러오기">
 <a class="anchor" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>라이브러리 불러오기<a class="anchor-link" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%B6%88%EB%9F%AC%EC%98%A4%EA%B8%B0"> </a>
 </h2>
@@ -232,6 +261,15 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="pd.read_csv()">
+<a class="anchor" href="#pd.read_csv()" aria-hidden="true"><span class="octicon octicon-link"></span></a>pd.read_csv()<a class="anchor-link" href="#pd.read_csv()"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/train.csv'</span><span class="p">)</span> 
 <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/test.csv'</span><span class="p">)</span>
 </pre></div>
@@ -249,6 +287,15 @@ window.onload = wrap_img;
 <li>shape 를 사용해 데이터 크기를 관찰하세요</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.shape">
+<a class="anchor" href="#df.shape" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.shape<a class="anchor-link" href="#df.shape"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -277,6 +324,15 @@ window.onload = wrap_img;
 <li>info() 를 사용해 결측치가 있는지 확인하세요.</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.info()">
+<a class="anchor" href="#df.info()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.info()<a class="anchor-link" href="#df.info()"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -325,6 +381,58 @@ Data columns (total 10 columns):
 dtypes: float64(8), int64(2)
 memory usage: 56.0 KB</code></pre>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df['a'].value_counts()">
+<a class="anchor" href="#df%5B'a'%5D.value_counts()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df['a'].value_counts()<a class="anchor-link" href="#df%5B'a'%5D.value_counts()"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>S    644
+C    168
+Q     77
+Name: Embarked, dtype: int64</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df['a'].unique()">
+<a class="anchor" href="#df%5B'a'%5D.unique()" aria-hidden="true"><span class="octicon octicon-link"></span></a>df['a'].unique()<a class="anchor-link" href="#df%5B'a'%5D.unique()"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+<pre><code>array(['S', 'C', 'Q', nan], dtype=object)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="전처리">
+<a class="anchor" href="#%EC%A0%84%EC%B2%98%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>전처리<a class="anchor-link" href="#%EC%A0%84%EC%B2%98%EB%A6%AC"> </a>
+</h1>
 </div>
 </div>
 </div>
@@ -403,6 +511,22 @@ dtype: int64</code></pre>
 </pre></div>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="pd.Series.map()">
+<a class="anchor" href="#pd.Series.map()" aria-hidden="true"><span class="octicon octicon-link"></span></a>pd.Series.map()<a class="anchor-link" href="#pd.Series.map()"> </a>
+</h3>
+<ul>
+<li>시리즈 내 값을 변환할 때 사용하는 함수</li>
+<li>문자열의 경우 숫자형으로 대체해주어야함. 모델에 넣기위해서</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">'Sex'</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">'male'</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'female'</span> <span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+</pre></div>
 
 </div>
 </div>

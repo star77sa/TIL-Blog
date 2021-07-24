@@ -18,7 +18,7 @@ permalink: /about/
 `-` C / C++
 
 ## 대외활동
-`-` 
+`-` 티클리안 서포터즈 1기 (2020.02 ~ 2020.03)
 
 #### This website is powered by **[WebCV](https://star77sa.github.io/)** [^1].
 

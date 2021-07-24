@@ -5,10 +5,10 @@ permalink: /about/
 ---
 
 ## 수상
-`-` 장학그...
+`-` 
 
 ## 프로젝트
-`-` ㅁㄴㅇㄹ
+`-` 
 
 ## 프로그래밍 스킬
 `-` Python
@@ -17,8 +17,8 @@ permalink: /about/
 
 `-` C / C++
 
-## 봉사활동
-`-` ㅁㄴㅇㄹ
+## 대외활동
+`-` 
 
 #### This website is powered by **[WebCV](https://star77sa.github.io/)** [^1].
 

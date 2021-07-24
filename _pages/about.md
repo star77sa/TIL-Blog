@@ -9,6 +9,7 @@ permalink: /about/
 
 ## 프로젝트
 `-` [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
+`-` [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
 
 ## 프로그래밍 스킬
 `-` Python

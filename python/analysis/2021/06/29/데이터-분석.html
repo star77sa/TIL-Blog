@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -136,6 +136,8 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#2021.06.29">2021.06.29 </a>
+<ul>
 <li class="toc-entry toc-h2"><a href="#라이브러리-불러오기">라이브러리 불러오기 </a></li>
 <li class="toc-entry toc-h2"><a href="#데이터-불러오기">데이터 불러오기 </a></li>
 <li class="toc-entry toc-h2"><a href="#데이터-행열-갯수-관찰">데이터 행열 갯수 관찰 </a></li>
@@ -149,9 +151,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#모델-훈련">모델 훈련 </a></li>
 <li class="toc-entry toc-h2"><a href="#테스트-파일-예측">테스트 파일 예측 </a></li>
 <li class="toc-entry toc-h2"><a href="#submission-파일-생성">submission 파일 생성 </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#2021.07.24-추가">2021.07.24 추가 </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#데이터-수정">데이터 수정 </a></li>
+<li class="toc-entry toc-h2"><a href="#필터링하여-데이터-수정">필터링하여 데이터 수정 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#df.iloc[-,-]">df.iloc[ , ] </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#데이터-추출,-인덱싱">데이터 추출, 인덱싱 </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#df.groupby()">df.groupby() </a></li>
@@ -175,6 +184,15 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2021.06.29">
+<a class="anchor" href="#2021.06.29" aria-hidden="true"><span class="octicon octicon-link"></span></a>2021.06.29<a class="anchor-link" href="#2021.06.29"> </a>
+</h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -505,6 +523,33 @@ dtype: int64</code></pre>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'석식계'</span><span class="p">][</span><span class="mi">973</span><span class="p">]</span> <span class="o">=</span> <span class="mf">479.8605851979346</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="필터링하여-데이터-수정">
+<a class="anchor" href="#%ED%95%84%ED%84%B0%EB%A7%81%ED%95%98%EC%97%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>필터링하여 데이터 수정<a class="anchor-link" href="#%ED%95%84%ED%84%B0%EB%A7%81%ED%95%98%EC%97%AC-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%88%98%EC%A0%95"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="df.iloc[-,-]">
+<a class="anchor" href="#df.iloc%5B-,-%5D" aria-hidden="true"><span class="octicon octicon-link"></span></a>df.iloc[ , ]<a class="anchor-link" href="#df.iloc%5B-,-%5D"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">498</span>
 </pre></div>
 
 </div>

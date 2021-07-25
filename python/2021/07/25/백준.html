@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python 백준 문제풀이 인사이트 | kyeong-soo</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Python 백준 문제풀이 인사이트" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="백준 온라인 저지 문제풀이 중 알게된 것들, 문법, 실수한 것들 정리하기" />
+<meta property="og:description" content="백준 온라인 저지 문제풀이 중 알게된 것들, 문법, 실수한 것들 정리하기" />
+<link rel="canonical" href="https://star77sa.github.io/TIL-Blog/python/2021/07/25/%EB%B0%B1%EC%A4%80.html" />
+<meta property="og:url" content="https://star77sa.github.io/TIL-Blog/python/2021/07/25/%EB%B0%B1%EC%A4%80.html" />
+<meta property="og:site_name" content="kyeong-soo" />
+<meta property="og:image" content="https://star77sa.github.io/TIL-Blog/images/" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-25T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"백준 온라인 저지 문제풀이 중 알게된 것들, 문법, 실수한 것들 정리하기","url":"https://star77sa.github.io/TIL-Blog/python/2021/07/25/%EB%B0%B1%EC%A4%80.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://star77sa.github.io/TIL-Blog/python/2021/07/25/%EB%B0%B1%EC%A4%80.html"},"headline":"Python 백준 문제풀이 인사이트","dateModified":"2021-07-25T00:00:00-05:00","datePublished":"2021-07-25T00:00:00-05:00","image":"https://star77sa.github.io/TIL-Blog/images/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/TIL-Blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://star77sa.github.io/TIL-Blog/feed.xml" title="kyeong-soo" /><link rel="shortcut icon" type="image/x-icon" href="/TIL-Blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/TIL-Blog/">kyeong-soo</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/TIL-Blog/about/">About Me</a><a class="page-link" href="/TIL-Blog/search/">Search</a><a class="page-link" href="/TIL-Blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python 백준 문제풀이 인사이트</h1><p class="page-description">백준 온라인 저지 문제풀이 중 알게된 것들, 문법, 실수한 것들 정리하기</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-25T00:00:00-05:00" itemprop="datePublished">
+        Jul 25, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/TIL-Blog/categories/#Python">Python</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/star77sa/TIL-Blog/tree/master/_notebooks/2021-07-25-백준.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/TIL-Blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/star77sa/TIL-Blog/master?filepath=_notebooks%2F2021-07-25-%EB%B0%B1%EC%A4%80.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/TIL-Blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/star77sa/TIL-Blog/blob/master/_notebooks/2021-07-25-백준.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/TIL-Blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#문자열">문자열 </a></li>
+<li class="toc-entry toc-h1"><a href="#리스트">리스트 </a></li>
+<li class="toc-entry toc-h1"><a href="#딕셔너리">딕셔너리 </a></li>
+<li class="toc-entry toc-h1"><a href="#조건문">조건문 </a></li>
+<li class="toc-entry toc-h1"><a href="#전역변수,-지역변수">전역변수, 지역변수 </a></li>
+<li class="toc-entry toc-h1"><a href="#클래스">클래스 </a></li>
+<li class="toc-entry toc-h1"><a href="#ETC">ETC </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-07-25-백준.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="문자열">
+<a class="anchor" href="#%EB%AC%B8%EC%9E%90%EC%97%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>문자열<a class="anchor-link" href="#%EB%AC%B8%EC%9E%90%EC%97%B4"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>어떠한 단어에서 특정 문자가 있는지 위치를 찾을 때</p>
+<p><code>'word'.find('r')</code></p>
+<p><code>'word'.index('r')</code></p>
+<p>을 사용한다. 차이점은 find는 찾고싶은 문자가 없으면 -1을 출력하고, index는 오류가 출력된다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>input()</code> 합수는 str을 받는 함수이다. 숫자를 넣어도 str</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p><code>input()</code> 대신 <code>sys.stdin.readline()</code> 사용하는 이유
+ 반복문으로 여러 줄을 입력받는 상황에서는 반드시 <code>sys.stdin.readline()</code>을 사용해야 시간초과가 발생하지 않는다.</p>
+<p>※ readline()은 앞 뒤에 개행문자가 포함된다. 앞 뒤 공백을 제거하기 위해 뒤에 추가로 <code>.strip()</code>을 적어주자.</p>
+<p>띄어쓰기로 값을 구분해야 할때는 sys.stdin.readline()<code>.split()</code>을 사용한다.</p>
+<p>주피터에서는 <code>sys.stdin.readline()</code> 작동하지않는다. <code>input()</code>으로 풀고 제출시에만 사용하자</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>특정 단어의 개수를 셀 때</p>
+<p><code>word = 'ljes=njak'</code>에서 'nj'의 개수를 찾으려면</p>
+<p><code>word.count('nj')</code>를 치면된다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>10의자리, 1의자리 문제 몫(<code>//</code>), 나머지(<code>%</code>)이용해서 풀기</p>
+<p>A // B 를 써야할 것 같은 문제 <code>math.ceil(A/B)</code> 고려할 것.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>40.0 같은 실수에서 소수점 아래까지 나타내고 싶으면 포맷팅을 사용하자. <code>value = "%.3f" % 40.0</code>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="리스트">
+<a class="anchor" href="#%EB%A6%AC%EC%8A%A4%ED%8A%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>리스트<a class="anchor-link" href="#%EB%A6%AC%EC%8A%A4%ED%8A%B8"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>리스트에서 <code>list.count( * )</code> 하면 *값의 개수를 찾아준다.</p>
+</li>
+<li>
+<p>집합(set)는 중복된 원소를 가지지 않기에 list를 set로 바꿨다가 다시 list로 바꾸면 중복이 제거된다!</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>정렬1 : <code>sorted(list())</code></p>
+<p>정렬2 : <code>list().sort()</code></p>
+<p>1번은 새로운 리스트가 만들어지고, 2번은 기존의 리스트를 정렬시켜서 대체시킨다.</p>
+</li>
+<li>
+<p>정렬에서 값이 리스트일 때, 정렬 중요도 설정</p>
+<p><code>A.sort(key = lambda x : x[1])</code></p>
+<p>2번째 원소로 정렬 후 1번째 원소로 정렬?</p>
+<p><code>A.sort(key = lambda x : (x[1], x[0]))</code></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>list 맨 마지막 수를 없앨 때</p>
+<p><code>list.remove(list[-1])</code>하면 탐색 후 제거.</p>
+<p><code>del list[-1]</code>하면 맨 뒤를 바로 제거!</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>리스트를 복사하고 싶을 때<div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">A</span>
+</pre></div>
+라고 하면 참조가 된다. 복사만 하려면 슬라이싱을 이용하자. <div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">A</span><span class="p">[:]</span>
+</pre></div>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>N x M 의 이중 배열을 만들고 싶을 때 리스트 컴프리헨션 이용.</p>
+<p>좋은 예시 : <code>arr = [ [0]*m for _ in range(n)]</code></p>
+<p>잘못된 예시 : <code>arr = [ [0]*m ] * n</code>  &lt;-- 전체 리스트 안에 포함된 각 리스트가 모두 같은 객체로 인식 된다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>리스트에 홀수만 담고싶을 때, <code>arr = [ i for i in range(20) if i%2 == 1]</code> 이렇게 조건도 달아줄 수 있다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="딕셔너리">
+<a class="anchor" href="#%EB%94%95%EC%85%94%EB%84%88%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>딕셔너리<a class="anchor-link" href="#%EB%94%95%EC%85%94%EB%84%88%EB%A6%AC"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>파이썬의 딕셔너리는 해시테이블을 이용하므로 데이터 조회, 수정에 있어서 O(1)의 시간에 처리가 가능하다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="조건문">
+<a class="anchor" href="#%EC%A1%B0%EA%B1%B4%EB%AC%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>조건문<a class="anchor-link" href="#%EC%A1%B0%EA%B1%B4%EB%AC%B8"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Python의 <code>and</code></p>
+<p>A and B 에서, A가 거짓일 경우, B는 보지않고 거짓인 A를 출력. False를 리턴해주지 않는다.</p>
+<p>A and B 에서 A가 참이다? B는 확인하지 않고 그냥 B를 출력해준다. 참이면 참인대로, 거짓이면 거짓인대로</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>Python의 <code>or</code>
+ 둘 중에 하나만 참이어도 참이기에 A or B 에서 A가 참일경우 B는 확인하지않고 그냥 A를 출력한다.</p>
+<p>마찬가지로 A가 거짓인경우 B를 확인안하고 바로 리턴해준다.</p>
+<p>결국 파이썬에선 거짓일 때 False가 아니라 거짓인 값 자체를 반환해준다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p><code>1 == 1 and 2</code> 이렇게하면 2가 나오고</p>
+<p><code>(1==1) and (1==2)</code> 이렇게 하면 False가 나온다.</p>
+<p>논리연산자는 각각의 요소마다 써주어야 한다!</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p><code>'C' == 'A' or 'C' == 'B' or 'C' == 'C'</code></p>
+<p>0 or 0 or 1  =&gt; 1 =&gt; True</p>
+</li>
+<li>
+<p><code>'C' == ('A' or 'B' or 'C')</code></p>
+<p>'C' == (1 or 1 or 1) =&gt; 'C' == 1 =&gt; False</p>
+</li>
+<li>
+<p><code>'C' == 'A' or 'B' or 'C'</code></p>
+<p>False or 'B' or 'C'에서 'B'는 바로 참으로 인식, 'B'를 출력</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="전역변수,-지역변수">
+<a class="anchor" href="#%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98,-%EC%A7%80%EC%97%AD%EB%B3%80%EC%88%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>전역변수, 지역변수<a class="anchor-link" href="#%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98,-%EC%A7%80%EC%97%AD%EB%B3%80%EC%88%98"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">A</span><span class="p">(</span><span class="o">~</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">A</span><span class="p">(</span><span class="o">~</span><span class="p">)</span>
+</pre></div>
+<p>이렇게 해도 count 는 증가하지않는다. 함수안의 count는 지역변수기 때문이다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="클래스">
+<a class="anchor" href="#%ED%81%B4%EB%9E%98%EC%8A%A4" aria-hidden="true"><span class="octicon octicon-link"></span></a>클래스<a class="anchor-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">Class</span> <span class="n">stack</span><span class="p">():</span>
+    <span class="o">~~~~~</span>
+    <span class="o">~~~~~</span>
+</pre></div>
+<p>이런 클래스가 있다면 <code>st = stack</code> 이 아니라 st = stack() 이렇게 해줘야 인스턴스가 생성됨.</p>
+<p><code>st = stack</code> 을 하면 st가 stack 클래스의 기능을 한다.(별명)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ETC">
+<a class="anchor" href="#ETC" aria-hidden="true"><span class="octicon octicon-link"></span></a>ETC<a class="anchor-link" href="#ETC"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>시간복잡도 생각하며 알고리즘 짤 것</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>주피터 <code>ctrl</code> + <code>/</code> 누르면 그 줄 주석처리!</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>소수 / 에라토스테네스의 채 공부해볼 것. 구현</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<code>for i in range(n)</code> 에서 맨 끝 1개를 덜 포함해서 종종 런타임에러가 일어났다. 주의</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p><code>while stack and i&lt;N:</code> 이거 하니까 인덱스 오류가 안났다. (백준 # 17298 오큰수)</p>
+<p>내가 했던건 <code>while i&lt;N:</code></p>
+<p>차이점 ??</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="star77sa/TIL-Blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/TIL-Blog/python/2021/07/25/%EB%B0%B1%EC%A4%80.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/TIL-Blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/TIL-Blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/TIL-Blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>TIL-Blog</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/star77sa" title="star77sa"><svg class="svg-icon grey"><use xlink:href="/TIL-Blog/assets/minima-social-icons.svg#github"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

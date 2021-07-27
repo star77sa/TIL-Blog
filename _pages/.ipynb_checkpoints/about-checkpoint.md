@@ -4,15 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-## About Me
-AI 대학원 진학을 목표로 공부하고 있습니다.
-
-`-` Name : 고경수
-
-`-` Email : star77sa@naver.com
-
-`-` 학력 : 전북대학교 통계학, 컴퓨터공학 (3-1 재)
-
 ## 수상
 `-` 
 

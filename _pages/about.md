@@ -4,7 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-## About Me
 AI 대학원 진학을 목표로 공부하고 있습니다.
 
 `-` Name : 고경수

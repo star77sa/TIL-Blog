@@ -12,8 +12,8 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 
 `-` 학력 : 전북대학교 통계학, 컴퓨터공학 (3-1 재)
 
-## 수상
-`-` 
+\\<-- ## 수상 -->
+\\<-- `-` --> 
 
 ## Project
 `-` [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)

@@ -254,7 +254,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>다층 신경망은 파라미터를 랜덤하게 초기화하면 학습이 잘 되지 않지만, 층마다 비지도 학습 형태의 사전훈련을 거친 뒤 얻은 파라미터를 초깃값으려 사용하면 학습이 잘된다고 한다.</p>
+<p>다층 신경망은 파라미터를 랜덤하게 초기화하면 학습이 잘 되지 않지만, 층마다 비지도 학습 형태의 사전훈련을 거친 뒤 얻은 파라미터를 초깃값으로 사용하면 학습이 잘된다고 한다.</p>
 
 </div>
 </div>
@@ -376,6 +376,29 @@ $$ z_{j} = f(u_{j}) \,\,\,\,\,\,(j = 1, 2, 3) $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>유닛의 활성화 함수로는 통상적으로 단조증가하는 비선형함수가 사용된다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/my_icons/%EC%8B%9C%EA%B7%B8%EB%AA%A8%EC%9D%B4%EB%93%9C.png" alt="" style="max-width: 500px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>
 <code>로지스틱 함수</code>는 (0, 1)을 치역으로, <code>쌍곡선 정접함수</code>는 (-1, 1)을 치역으로 갖는다.</li>
 <li>로지스틱함수와 쌍곡선 정접함수는 모두 시그모이드 함수이다.
@@ -390,7 +413,7 @@ $$ z_{j} = f(u_{j}) \,\,\,\,\,\,(j = 1, 2, 3) $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><figure>
   
-    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/my_icons/%EC%8B%9C%EA%B7%B8%EB%AA%A8%EC%9D%B4%EB%93%9C.png" alt="" style="max-width: 500px">
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/my_icons/%EB%9E%A8%ED%94%84%ED%95%A8%EC%88%98.png" alt="" style="max-width: 500px">
     
     
 </figure>
@@ -496,7 +519,7 @@ $$ z_{j} = f(u_{j}) \,\,\,\,\,\,(j = 1, 2, 3) $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>
-<p>하나의 입력 x에 대하여 바람직한 출력을 d라고 할 때, 이러한 입출력 쌍이 어려개 주어졌다고 하면</p>
+<p>하나의 입력 x에 대하여 바람직한 출력을 d라고 할 때, 이러한 입출력 쌍이 어러개 주어졌다고 하면</p>
 <p>신경망의 출력 y이 최대한 d와 가까워지도록 w를 조정해야한다. 이것을 <code>학습</code>이라고 부른다.</p>
 <p>이 때 신경망이 나타내는 함수와 훈련 데이터와의 가까운 정도 즉 거리를 어떻게 측정할 것인지가 중요한데</p>
 <p>이 거리의 척도를 <code>오차함수</code>라고 부른다.</p>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://star77sa.github.io/TIL-Blog/jupyter/2020/01/01/test.html</loc>
+<lastmod>2020-01-01T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>https://star77sa.github.io/TIL-Blog/python/2020/02/20/templete.html</loc>
 <lastmod>2020-02-20T00:00:00-06:00</lastmod>
 </url>
@@ -39,10 +43,6 @@
 <url>
 <loc>https://star77sa.github.io/TIL-Blog/dl/2021/07/29/DeepLearning.html</loc>
 <lastmod>2021-07-29T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://star77sa.github.io/TIL-Blog/jupyter/2021/07/30/test.html</loc>
-<lastmod>2021-07-30T00:00:00-05:00</lastmod>
 </url>
 <url>
 <loc>https://star77sa.github.io/TIL-Blog/about/</loc>

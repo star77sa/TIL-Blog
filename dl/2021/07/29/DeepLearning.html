@@ -167,6 +167,17 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#드롭아웃">드롭아웃 </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h3"><a href="#학습을-위한-트릭">학습을 위한 트릭 </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#데이터-정규화">데이터 정규화 </a></li>
+<li class="toc-entry toc-h4"><a href="#데이터-확장">데이터 확장 </a></li>
+<li class="toc-entry toc-h4"><a href="#여러-신경망의-평균">여러 신경망의 평균 </a></li>
+<li class="toc-entry toc-h4"><a href="#학습률의-결정-방법">학습률의 결정 방법 </a></li>
+<li class="toc-entry toc-h4"><a href="#모멘텀">모멘텀 </a></li>
+<li class="toc-entry toc-h4"><a href="#가중치의-초기화">가중치의 초기화 </a></li>
+<li class="toc-entry toc-h4"><a href="#샘플의-순서">샘플의 순서 </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -1108,6 +1119,78 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 </li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="학습을-위한-트릭">
+<a class="anchor" href="#%ED%95%99%EC%8A%B5%EC%9D%84-%EC%9C%84%ED%95%9C-%ED%8A%B8%EB%A6%AD" aria-hidden="true"><span class="octicon octicon-link"></span></a>학습을 위한 트릭<a class="anchor-link" href="#%ED%95%99%EC%8A%B5%EC%9D%84-%EC%9C%84%ED%95%9C-%ED%8A%B8%EB%A6%AD"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="데이터-정규화">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EA%B7%9C%ED%99%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 정규화<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EA%B7%9C%ED%99%94"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="데이터-확장">
+<a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%99%95%EC%9E%A5" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 확장<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%99%95%EC%9E%A5"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="여러-신경망의-평균">
+<a class="anchor" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>여러 신경망의 평균<a class="anchor-link" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="학습률의-결정-방법">
+<a class="anchor" href="#%ED%95%99%EC%8A%B5%EB%A5%A0%EC%9D%98-%EA%B2%B0%EC%A0%95-%EB%B0%A9%EB%B2%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>학습률의 결정 방법<a class="anchor-link" href="#%ED%95%99%EC%8A%B5%EB%A5%A0%EC%9D%98-%EA%B2%B0%EC%A0%95-%EB%B0%A9%EB%B2%95"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="모멘텀">
+<a class="anchor" href="#%EB%AA%A8%EB%A9%98%ED%85%80" aria-hidden="true"><span class="octicon octicon-link"></span></a>모멘텀<a class="anchor-link" href="#%EB%AA%A8%EB%A9%98%ED%85%80"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="가중치의-초기화">
+<a class="anchor" href="#%EA%B0%80%EC%A4%91%EC%B9%98%EC%9D%98-%EC%B4%88%EA%B8%B0%ED%99%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>가중치의 초기화<a class="anchor-link" href="#%EA%B0%80%EC%A4%91%EC%B9%98%EC%9D%98-%EC%B4%88%EA%B8%B0%ED%99%94"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="샘플의-순서">
+<a class="anchor" href="#%EC%83%98%ED%94%8C%EC%9D%98-%EC%88%9C%EC%84%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>샘플의 순서<a class="anchor-link" href="#%EC%83%98%ED%94%8C%EC%9D%98-%EC%88%9C%EC%84%9C"> </a>
+</h4>
 </div>
 </div>
 </div>

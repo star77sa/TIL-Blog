@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      11 min read
     
 </span></p>
 
@@ -1209,7 +1209,7 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <p>단점 : 복수의 신경망을 학습시켜야 하므로 시간 및 연산량이 증가</p>
 </li>
 <li>
-<p>위에서의 <code>드롭아웃</code>은 신경망 하나를 사용해서 실질적으로는 여러개의 신경망에 모델평균을 적용한 것과 같은 효과가 있다</p>
+<p>위에서의 <code>드롭아웃</code>은 신경망 하나를 사용해서 실질적으로는 여러개의 신경망에 모델 평균을 적용한 것과 같은 효과가 있다</p>
 </li>
 </ul>
 
@@ -1222,6 +1222,40 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <h4 id="학습률의-결정-방법">
 <a class="anchor" href="#%ED%95%99%EC%8A%B5%EB%A5%A0%EC%9D%98-%EA%B2%B0%EC%A0%95-%EB%B0%A9%EB%B2%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>학습률의 결정 방법<a class="anchor-link" href="#%ED%95%99%EC%8A%B5%EB%A5%A0%EC%9D%98-%EA%B2%B0%EC%A0%95-%EB%B0%A9%EB%B2%95"> </a>
 </h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>경사 하강법에서는 파라미터의 업데이트 정도를 학습률을 통해 조절</p>
+</li>
+<li>
+<p>학습률을 결정하기 위한 정석과 같은 방법 2가지</p>
+<ol>
+<li>
+<p>학습 초기에 값을 크게 설정했다가 학습의 진행과 함께 학습률을 점점 줄여가는 방법</p>
+</li>
+<li>
+<p>신경망의 모든 층에서 같은 학습률을 사용하는 것이 아닌 층마다 서로 다른 값을 사용하는 것</p>
+<ul>
+<li>각 층의 가중치 업데이트 속도가 되도록 비슷하게 가중치를 설정하는 것이 좋다고 알려져 있다.</li>
+<li>로지스틱 함수처럼 치역이 제약된 활성화 함수를 사용할 때 특히 중요하다.</li>
+<li>램프 함수를 사용할 때는 적합하지 않다.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>학습률을 자동적으로 결정하는 방법 : <code>AdaGrad</code><ul>
+<li>자주 나타나는 기울기의 성분보다 드물게 나타나는 기울기의 성분을 더 중시해서 파라미터를 업데이트 하는 것</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -1246,9 +1280,60 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>가장 일반적인 방법은 가우스 분포로부터 랜덤값을 생성하여 초깃값으로 삼는 방법. 가우스 분포의 표준편차의 선택은 학습에 결과에도 영향을 미친다.<ul>
+<li>표준편차를 그게 잡고 초깃값을 들쭉날쭉하게 하면 초기 학습은 빠르게 진행되지만 오차함수의 감소가 일찌감치 멈춰버리는 경향이 있음</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>바이어스의 초깃값은 통상 0으로 결정</li>
+<li>
+<p>유닛의 활성화 함수로 로지스틱 함수 등 치역에 상하한이 있는 함수를 쓰는 경우 표준편차의 범위도 필연적으로 제약을 받는다.</p>
+<p>표준편차의 값이 적절하지 못하면 활성화 함수의 출력이 그 치역 내에서 적절한 범위로 들어오지 못하기 때문.</p>
+<ol>
+<li>표준편차가 너무 작으면 0으로 채운 초깃값을 사용하는 것과 차이가 없게됨.</li>
+<li>표준편차가 너무 크면 유닛의 입력에 대한 총합이 너무 들쭉날쭉해서 유닛의 출력이 치역의 최댓값 혹은 최솟값을 갖는 경우가 너무 많음</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>이 외에도 사전훈련을 통해 초깃값을 정하는 방법이 있으며 딥 뉴럴넷에서는 이쪽이 더 일반적</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="샘플의-순서">
 <a class="anchor" href="#%EC%83%98%ED%94%8C%EC%9D%98-%EC%88%9C%EC%84%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>샘플의 순서<a class="anchor-link" href="#%EC%83%98%ED%94%8C%EC%9D%98-%EC%88%9C%EC%84%9C"> </a>
 </h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>확률적 경사 하강법을 쓸 때 훈련 샘플을 어떤 순서로 추출할 것인지에 대해 자유롭게 선택할 수 있다.</p>
+</li>
+<li>
+<p>일반적으로는 신경망이 '익숙하지 않은' 샘플을 먼저 보이는 전략이 학습에 가장 유리하다고 할 수 있다.</p>
+<p>이 방법은 특히 유형별로 샘플 수에 편차가 있는 클래스 분류 문제에 좋은 결과를 보이곤 한다.</p>
+<p>하지만 훈련 데이터 중에 오답(잘못된 목표출력)이 포함된 경우에는 오히려 역효과가 나니 주의가 필요하다.</p>
+<ul>
+<li>
+<p>그러나 딥 뉴럴넷을 대상으로 하는 최근의 케이스에서는 클래스 간의 샘플 수에 편차가 없도록 셔플링한 샘플을 기계적으로 조합하여 미니배치를 구성,</p>
+<p>미니배치를 구성한 순서대로 반복하여 신경망에 입력하는 경우가 많다.</p>
+<p>대규모 신경망과 대량의 훈련 샘플을 어떻게 효율적으로 다룰지에 중점을 더 두는 경우가 많다고 할 수 있다.</p>
+</li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
 </div>

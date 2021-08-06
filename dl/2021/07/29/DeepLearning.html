@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      9 min read
     
 </span></p>
 
@@ -171,7 +171,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h4"><a href="#데이터-정규화">데이터 정규화 </a></li>
 <li class="toc-entry toc-h4"><a href="#데이터-확장">데이터 확장 </a></li>
-<li class="toc-entry toc-h4"><a href="#여러-신경망의-평균">여러 신경망의 평균 </a></li>
+<li class="toc-entry toc-h4"><a href="#여러-신경망의-평균-:-모델-평균">여러 신경망의 평균 : 모델 평균 </a></li>
 <li class="toc-entry toc-h4"><a href="#학습률의-결정-방법">학습률의 결정 방법 </a></li>
 <li class="toc-entry toc-h4"><a href="#모멘텀">모멘텀 </a></li>
 <li class="toc-entry toc-h4"><a href="#가중치의-초기화">가중치의 초기화 </a></li>
@@ -1134,9 +1134,34 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>학습 시에 적용하는 것만으로도 일반화 성능을 향상시키거나 학습을 빨리 진행할 수 있게 하는 방법</li>
+<li>이론적 뒷받침이 부족한 노하우에 가까운 것들. 실제로 효과를 인정받는 것이 많아 오래전부터 사용됐다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="데이터-정규화">
 <a class="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EA%B7%9C%ED%99%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>데이터 정규화<a class="anchor-link" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%95%EA%B7%9C%ED%99%94"> </a>
 </h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>데이터에서 경향을 제거하기 위한 전처리</li>
+<li>
+<p>각 성분에서 해당 성분의 학습데이터 전체에서 평균을 빼서 평균이 0이되도록 변환한 뒤 각 성분을 표준편차로 나눈다.</p>
+<p>각 성분의 평균이 0, 분산이 1이됨</p>
+</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -1152,9 +1177,42 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="여러-신경망의-평균">
-<a class="anchor" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>여러 신경망의 평균<a class="anchor-link" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0"> </a>
+<ul>
+<li>훈련 데이터의 부족은 과적합을 일으키는 가장 큰 원인.</li>
+<li>데이터 확장 : 확보한 샘플 데이터를 일정하게 가공하여 양적으로 '물타기' 하는 방법</li>
+<li>데이터 확장은 샘플의 분포 양상을 예상할 수 있는 경우에 특히 유효하다. 이미지 데이터가 그 전형적인 예</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="여러-신경망의-평균-:-모델-평균">
+<a class="anchor" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0-:-%EB%AA%A8%EB%8D%B8-%ED%8F%89%EA%B7%A0" aria-hidden="true"><span class="octicon octicon-link"></span></a>여러 신경망의 평균 : 모델 평균<a class="anchor-link" href="#%EC%97%AC%EB%9F%AC-%EC%8B%A0%EA%B2%BD%EB%A7%9D%EC%9D%98-%ED%8F%89%EA%B7%A0-:-%EB%AA%A8%EB%8D%B8-%ED%8F%89%EA%B7%A0"> </a>
 </h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>여러개의 서로 다른 신경망을 조합하면 일반적으로 추정의 정확도를 향상시킬 수 있다.</li>
+<li>
+<p>조합할 신경망은 같은 데이터로 훈련한 서로 구조가 다른 것들로 구성하거나 구조가 같아도 서로 다른 초깃값으로 초기화한 것으로 구성.</p>
+<p>입력에 서로 다른 변환을 가해 두고 각각 다른 신경망에 입력하여 결과를 평균 내는 방법도 있음.</p>
+<p>학습 시에 각 신경망은 서로 독립적으로 훈련</p>
+</li>
+<li>
+<p>단점 : 복수의 신경망을 학습시켜야 하므로 시간 및 연산량이 증가</p>
+</li>
+<li>
+<p>위에서의 <code>드롭아웃</code>은 신경망 하나를 사용해서 실질적으로는 여러개의 신경망에 모델평균을 적용한 것과 같은 효과가 있다</p>
+</li>
+</ul>
+
 </div>
 </div>
 </div>

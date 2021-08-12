@@ -15,19 +15,19 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 <!-- ## 수상 -->
 <!-- `-` --> 
 
-## Project
+> ## Project
 `-` [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
 
 `-` [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
 
-## Programming Skill
+>## Programming Skill
 `-` `Python`
 
 `-` R
 
 `-` C / C++
 
-## Experience
+>## Experience
 `-` 핀테크 앱 서비스 '티클리안' 서포터즈 1기 (2020.02 ~ 2020.03)
 
 `-` 취약계층을 위한 라면 나눔행사 지원 봉사활동 등 봉사활동 19건 44시간 (2020.05 ~ 2020.09)
@@ -38,8 +38,8 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 
 `-` 전북대학교 혁신교육개발원 BSM클리닉 2학기 수학 조교 (2021.09 ~ 2021.)
 
-#### **[WebCV](https://star77sa.github.io/)** [^1].
+<!-- #### **[WebCV](https://star77sa.github.io/)** [^1]. -->
 
 
 
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+<!-- [^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats. -->

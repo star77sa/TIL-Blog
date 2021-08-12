@@ -375,7 +375,9 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>여기에 다시 활성화 함수를 적용하여 아래 식과 같은 출력이 된다.</p>
-<p>$ z_{j} = f(u_{j}) \,\,\,\,\,\,(j = 1, 2, 3) $</p>
+<p>
+$$ z_{j} = f(u_{j}) \,\,\,\,\,\,(j = 1, 2, 3) $$
+</p>
 
 </div>
 </div>
@@ -551,7 +553,7 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>오차함수 = 손실함수. (나쁜 정도를 측정하는 함수라 보면 될듯 작을수록 좋다!)</li>
+<li>오차함수 = 손실함수 (나쁜 정도를 측정하는 함수라 보면 될듯 작을수록 좋다!)</li>
 </ul>
 
 </div>
@@ -699,11 +701,16 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
 <p>학습의 목표는 선택한 오차함수에 대하여 최솟값을 주는 오차함수를 구하는 것이지만,</p>
 <p>오차함수는 일반적인 경우 볼록함수가 아니므로 전역극소점(global minimum)을 직접 구하는 것은 통상적으로 불가능하다.</p>
 <p>대신에 국소 극소점(local minimum)을 구하는 것을 생각해보면, 국소 극소점은 여러개 존재하므로</p>
 <p>구한 극소점이 우연히 전역 극소점일 가능성은 낮다. 다만 국소 극소점이 충분히 작다면 목적으로 하는 클래스 분류나</p>
 <p>회귀 문제를 나름대로 잘 풀 수도 있다.</p>
+<p><img src="my_icons/%EA%B2%BD%EC%82%AC%ED%95%98%EA%B0%95%EB%B2%95.png" width="500" height="300"></p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -711,30 +718,13 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><figure>
-  
-    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/my_icons/%EA%B2%BD%EC%82%AC%ED%95%98%EA%B0%95%EB%B2%95.png" alt="" style="max-width: 500px">
-    
-    
-</figure>
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
 <p>현재의 w를 음의 기울기 방향으로 조금씩 움직이는 것을 여러번 반복하여 언젠가는 극소점에 도달하는 것이다.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>최소화 방법에 목적함수의 2차미분을 이용하는 뉴턴법 등이 있지만 문제의 크기가 큰 경우에 2차 미분에 대한 계산이</p>
 <p>어렵기에 경사하강법은 사용할 수 있는 몇 안되는 유효한 방법 중 하나가 된다.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -751,6 +741,8 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
 <p>위에서는 각 샘플의 오차들의 합을 이용하여 한 방법인데, 이를 <code>배치학습</code>이라고 한다. = 에포크 학습</p>
 <p><code>확률적 경사하강법</code>은 이와 대조적으로 샘플의 일부, 극단적으론 샘플 하나만을 사용하여 파라미터를 업데이트 한다.</p>
 <p>1회 진행할때마다 다른 샘플을 선택하여 업데이트를 한다.</p>
@@ -763,6 +755,8 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <p>국소 극소점에 갇히는 위험을 줄일 수 있다. 목적함수가 w를 업데이트할 때마다 달라지므로.</p>
 </li>
 </ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -1014,26 +1008,12 @@ $$ u = w_1x_1 + w_2x_2 + w_3x_3 + w_4x_4 + b $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>각 유닛의 입력 측 결합의 가중치에 대해서 그 제곱합의 최댓값을 제약하는 방법</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>
-$$ \sum_i w_{ji}^2 &lt; c $$
-</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<li>
+<p>각 유닛의 입력 측 결합의 가중치에 대해서 그 제곱합의 최댓값을 제약하는 방법</p>
+<p>$ \sum_i w_{ji}^2 &lt; c $</p>
 <p>이 부등식을 만족하지 않는 경우에는 가중치에 미리 정한 (1보다 작은) 상수를 곱하여 부등식을 만족하도록 한다.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -1138,8 +1118,12 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>학습 시에 적용하는 것만으로도 일반화 성능을 향상시키거나 학습을 빨리 진행할 수 있게 하는 방법</li>
-<li>이론적 뒷받침이 부족한 노하우에 가까운 것들. 실제로 효과를 인정받는 것이 많아 오래전부터 사용됐다.</li>
+<li>
+<p>학습 시에 적용하는 것만으로도 일반화 성능을 향상시키거나 학습을 빨리 진행할 수 있게 하는 방법</p>
+</li>
+<li>
+<p>이론적 뒷받침이 부족한 노하우에 가까운 것들. 실제로 효과를 인정받는 것이 많아 오래전부터 사용됐다.</p>
+</li>
 </ul>
 
 </div>
@@ -1181,9 +1165,15 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>훈련 데이터의 부족은 과적합을 일으키는 가장 큰 원인.</li>
-<li>데이터 확장 : 확보한 샘플 데이터를 일정하게 가공하여 양적으로 '물타기' 하는 방법</li>
-<li>데이터 확장은 샘플의 분포 양상을 예상할 수 있는 경우에 특히 유효하다. 이미지 데이터가 그 전형적인 예</li>
+<li>
+<p>훈련 데이터의 부족은 과적합을 일으키는 가장 큰 원인.</p>
+</li>
+<li>
+<p>데이터 확장 : 확보한 샘플 데이터를 일정하게 가공하여 양적으로 '물타기' 하는 방법</p>
+</li>
+<li>
+<p>데이터 확장은 샘플의 분포 양상을 예상할 수 있는 경우에 특히 유효하다. 이미지 데이터가 그 전형적인 예</p>
+</li>
 </ul>
 
 </div>
@@ -1275,16 +1265,9 @@ $$ \sum_i w_{ji}^2 &lt; c $$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>가중치의 업데이트 값에 이전 업데이트 값의 일정 비율을 더하는 방법</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
+<li>
+<p>가중치의 업데이트 값에 이전 업데이트 값의 일정 비율을 더하는 방법</p>
+</li>
 <li>
 <p>오차 함수가 깊은 골짜기 같은 형상을 가지며, 그 골짜기 바닥이 비교적 평평한 경우에는 경사 하강법의 효율이 매우 떨어진다고 알려져있다.</p>
 <p>모멘텀은 이러한 문제를 해결하고 골짜기 방향을 따라 골짜기 바닥을 효율적으로 탐색할 수 있게 해준다.</p>

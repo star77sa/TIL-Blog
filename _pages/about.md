@@ -6,40 +6,43 @@ permalink: /about/
 
 AI 대학원 진학을 목표로 공부하고 있습니다.
 
-`-` Name : 고경수
+- Name : 고경수
 
-`-` Email : star77sa@naver.com
+- Email : star77sa@naver.com
 
-`-` 학력 : 전북대학교 통계학, 컴퓨터공학 (3-1 재)
+- 학력 : 전북대학교 통계학, 컴퓨터공학 (3-1 재)
 
 <!-- ## 수상 -->
 <!-- `-` --> 
 
 > ## Project
 
-`-` [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
 
-`-` [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
+- [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
+
+- [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
 
 >## Programming Skill
 
-`-` Python
 
-`-` R
+- Python
 
-`-` C / C++
+- R
+
+- C / C++
 
 >## Experience
 
-`-` 핀테크 앱 서비스 '티클리안' 서포터즈 1기 (2020.02 ~ 2020.03)
 
-`-` 취약계층을 위한 라면 나눔행사 지원 봉사활동 등 봉사활동 19건 44시간 (2020.05 ~ 2020.09)
+- 핀테크 앱 서비스 '티클리안' 서포터즈 1기 (2020.02 ~ 2020.03)
 
-`-` 2020 동계 어학연수 참여(University of San Jose) (2021.01 ~ 2021.02)
+- 취약계층을 위한 라면 나눔행사 지원 봉사활동 등 봉사활동 19건 44시간 (2020.05 ~ 2020.09)
 
-`-` 전북대학교 혁신교육개발원 BSM클리닉 1학기 수학 조교 (2021.04 ~ 2021.06)
+- 2020 동계 어학연수 참여(University of San Jose) (2021.01 ~ 2021.02)
 
-`-` 전북대학교 혁신교육개발원 BSM클리닉 2학기 수학 조교 (2021.09 ~ 2021.)
+- 전북대학교 혁신교육개발원 BSM클리닉 1학기 수학 조교 (2021.04 ~ 2021.06)
+
+- 전북대학교 혁신교육개발원 BSM클리닉 2학기 수학 조교 (2021.09 ~ 2021.12)
 
 <!-- #### **[WebCV](https://star77sa.github.io/)** [^1]. -->
 

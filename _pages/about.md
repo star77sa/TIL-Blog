@@ -17,6 +17,7 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 
 > ## Project
 
+- 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
 
 - [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
 
@@ -41,6 +42,7 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 - 2020 동계 어학연수 참여(University of San Jose) (2021.01 ~ 2021.02)
 
 - 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 (2021.04 ~ 2021.06)
+
 
 <!-- #### **[WebCV](https://star77sa.github.io/)** [^1]. -->
 

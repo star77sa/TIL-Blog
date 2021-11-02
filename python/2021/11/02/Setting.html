@@ -139,9 +139,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#파일-내보내기">파일 내보내기 </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#라이브러리">라이브러리 </a>
+<li class="toc-entry toc-h1"><a href="#기본-라이브러리">기본 라이브러리 </a></li>
+<li class="toc-entry toc-h1"><a href="#train-test-split">train test split </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#기본">기본 </a></li>
 <li class="toc-entry toc-h2"><a href="#캣부스트">캣부스트 </a></li>
 </ul>
 </li>
@@ -175,7 +175,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"G:/내 드라이브/bb/cc/data.csv')</span>
+<div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"G:/내 드라이브/bb/cc/data.csv')</span>
 </pre></div>
 
 </div>
@@ -212,6 +212,25 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">test</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'G:/내 드라이브/Github/TIL-Blog/test.csv'</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>해당 경로에 파일이 내보내진다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 
 </div>
@@ -220,18 +239,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="라이브러리">
-<a class="anchor" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>라이브러리<a class="anchor-link" href="#%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC"> </a>
+<h1 id="기본-라이브러리">
+<a class="anchor" href="#%EA%B8%B0%EB%B3%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>기본 라이브러리<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC"> </a>
 </h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="기본">
-<a class="anchor" href="#%EA%B8%B0%EB%B3%B8" aria-hidden="true"><span class="octicon octicon-link"></span></a>기본<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8"> </a>
-</h2>
 </div>
 </div>
 </div>
@@ -259,6 +269,51 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="train-test-split">
+<a class="anchor" href="#train-test-split" aria-hidden="true"><span class="octicon octicon-link"></span></a>train test split<a class="anchor-link" href="#train-test-split"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'종속변수1'</span><span class="p">,</span> <span class="s1">'종속변수2'</span><span class="p">]],</span> <span class="n">train</span><span class="p">[</span><span class="s1">'반응변수'</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># shuffle=False 추가가능. default = True</span>
+</pre></div>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

@@ -140,7 +140,17 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#기본-라이브러리">기본 라이브러리 </a></li>
-<li class="toc-entry toc-h1"><a href="#train-test-split">train test split </a></li>
+<li class="toc-entry toc-h1"><a href="#전처리">전처리 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#train-/-validation-set-split">train / validation set split </a></li>
+<li class="toc-entry toc-h2"><a href="#결측치-처리">결측치 처리 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1.-수치형">1. 수치형 </a></li>
+<li class="toc-entry toc-h3"><a href="#2.-범주형">2. 범주형 </a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Model">Model </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#CatBoost-+-예시">CatBoost + 예시 </a></li>
@@ -151,7 +161,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#평가점수">평가점수 </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#RMSE">RMSE </a></li>
-<li class="toc-entry toc-h2"><a href="#AUC">AUC </a></li>
+<li class="toc-entry toc-h2"><a href="#Accuracy">Accuracy </a></li>
 </ul>
 </li>
 </ul><!--
@@ -262,14 +272,28 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># numpy</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># pandas</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># numpy</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># matplotlib</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># matplotlib</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1"># seaborn</span>
@@ -289,8 +313,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="train-test-split">
-<a class="anchor" href="#train-test-split" aria-hidden="true"><span class="octicon octicon-link"></span></a>train test split<a class="anchor-link" href="#train-test-split"> </a>
+<h1 id="전처리">
+<a class="anchor" href="#%EC%A0%84%EC%B2%98%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>전처리<a class="anchor-link" href="#%EC%A0%84%EC%B2%98%EB%A6%AC"> </a>
 </h1>
 </div>
 </div>
@@ -298,16 +322,265 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<h2 id="train-/-validation-set-split">
+<a class="anchor" href="#train-/-validation-set-split" aria-hidden="true"><span class="octicon octicon-link"></span></a>train / validation set split<a class="anchor-link" href="#train-/-validation-set-split"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'종속변수1'</span><span class="p">,</span> <span class="s1">'종속변수2'</span><span class="p">]],</span> <span class="n">train</span><span class="p">[</span><span class="s1">'반응변수'</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://bit.ly/fc-ml-titanic'</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># shuffle=False 추가가능. default = True</span>
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Pclass'</span><span class="p">,</span> <span class="s1">'Sex'</span><span class="p">,</span> <span class="s1">'Age'</span><span class="p">,</span> <span class="s1">'Fare'</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'Survived'</span>
+<span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<strong>test_size</strong>: validation set에 할당할 비율 (20% -&gt; 0.2)</li>
+<li>
+<strong>shuffle</strong>: 셔플 옵션 (기본 True)</li>
+<li>
+<strong>random_state</strong>: 랜덤 시드값</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_valid</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="n">label</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="결측치-처리">
+<a class="anchor" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%B2%98%EB%A6%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>결측치 처리<a class="anchor-link" href="#%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%B2%98%EB%A6%AC"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="1.-수치형">
+<a class="anchor" href="#1.-%EC%88%98%EC%B9%98%ED%98%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. 수치형<a class="anchor-link" href="#1.-%EC%88%98%EC%B9%98%ED%98%95"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>칼럼 1개 처리하는 경우</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">'Age'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>칼럼 여러개 처리하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">'median'</span><span class="p">)</span> <span class="c1">## 한번에 여러개 처리. median, mean ...</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'Age'</span><span class="p">,</span> <span class="s1">'Pclass'</span><span class="p">]])</span>
+<span class="n">train</span><span class="p">[[</span><span class="s1">'Age'</span><span class="p">,</span> <span class="s1">'Pclass'</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-범주형">
+<a class="anchor" href="#2.-%EB%B2%94%EC%A3%BC%ED%98%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. 범주형<a class="anchor-link" href="#2.-%EB%B2%94%EC%A3%BC%ED%98%95"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'https://bit.ly/fc-ml-titanic'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>컬럼 1개 처리하는 경우</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">'Embarked'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">'S'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>칼럼 여러개 처리하는 경우</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">imputer</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s1">'most_frequent'</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'Embarked'</span><span class="p">,</span> <span class="s1">'Cabin'</span><span class="p">]])</span>
+<span class="n">train</span><span class="p">[[</span><span class="s1">'Embarked'</span><span class="p">,</span> <span class="s1">'Cabin'</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -452,8 +725,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="AUC">
-<a class="anchor" href="#AUC" aria-hidden="true"><span class="octicon octicon-link"></span></a>AUC<a class="anchor-link" href="#AUC"> </a>
+<h2 id="Accuracy">
+<a class="anchor" href="#Accuracy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Accuracy<a class="anchor-link" href="#Accuracy"> </a>
 </h2>
 </div>
 </div>

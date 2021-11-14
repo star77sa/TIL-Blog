@@ -1283,6 +1283,28 @@ Average Error: 11.083201392666322
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>RandomizedSearchCV(cv=3, estimator=LGBMRegressor(), n_iter=25,
+                   param_distributions={'colsample_bytree': [0.8, 0.9, 1.0],
+                                        'learning_rate': [0.1, 0.05, 0.01],
+                                        'max_depth': [6, 7, 8],
+                                        'n_estimators': [200, 500, 1000, 2000],
+                                        'subsample': [0.8, 0.9, 1.0]},
+                   random_state=42, scoring='neg_mean_squared_error')</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1300,6 +1322,22 @@ Average Error: 11.083201392666322
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-13.707228623244996</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1314,6 +1352,26 @@ Average Error: 11.083201392666322
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'subsample': 0.9,
+ 'n_estimators': 2000,
+ 'max_depth': 6,
+ 'learning_rate': 0.01,
+ 'colsample_bytree': 0.8}</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -1429,6 +1487,27 @@ Average Error: 11.083201392666322
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>GridSearchCV(cv=3, estimator=LGBMRegressor(), n_jobs=-1,
+             param_grid={'colsample_bytree': [0.8, 0.9],
+                         'learning_rate': [0.1, 0.05, 0.01],
+                         'max_depth': [7, 8], 'n_estimators': [500, 1000],
+                         'subsample': [0.8, 0.9]},
+             scoring='neg_mean_squared_error')</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1446,6 +1525,22 @@ Average Error: 11.083201392666322
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-13.598939419010335</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -1460,6 +1555,26 @@ Average Error: 11.083201392666322
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{'colsample_bytree': 0.8,
+ 'learning_rate': 0.05,
+ 'max_depth': 7,
+ 'n_estimators': 500,
+ 'subsample': 0.8}</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

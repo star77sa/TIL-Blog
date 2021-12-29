@@ -379,9 +379,12 @@ window.onload = wrap_img;
 <ul>
 <li>
 <p>권장되는 전처리는 데이터의 중앙에 평균이 0이 되도록 하고 (zero centered), 스케일을 [-1, 1]로 정규화 하는 것 입니다.</p>
+<ul>
+<li>올바른 전처리 방법 : 예를들어 평균차감 기법을 쓸 때 학습, 검증, 테스트를 위한 데이터를 먼저 나눈 후 학습 데이터를 대상으로 평균값을 구한 후에 평균차감 전처리를 모든 데이터군(학습, 검증, 테스트)에 적용하는 것이다.</li>
+</ul>
 </li>
 <li>
-<p>$\sqrt{2/n}$ 의 표준 편차를 갖는 정규 분포에서 가중치를 가져와 초기화합니다. 여기서 $n$은 뉴런에 대한 입력 수입니다. E.g. in numpy: <code>w = np.random.randn(n) * sqrt(2.0/n)</code>.</p>
+<p>ReLU를 사용하고 초기화는 $\sqrt{2/n}$ 의 표준 편차를 갖는 정규 분포에서 가중치를 가져와 초기화합니다. 여기서 $n$은 뉴런에 대한 입력 수입니다. E.g. in numpy: <code>w = np.random.randn(n) * sqrt(2.0/n)</code>.</p>
 </li>
 <li>
 <p>L2 regularization과 드랍아웃을 사용 (the inverted version)</p>

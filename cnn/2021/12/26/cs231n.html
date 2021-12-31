@@ -523,15 +523,26 @@ window.onload = wrap_img;
 <p>Localization method : localization as Regression, Sliding Window : Overfeat</p>
 </li>
 <li>
+<p>Region Proposals : 비슷한 색깔, 텍스쳐를 기준으로 박스를 생성</p>
+</li>
+<li>
 <p>Detection :</p>
 <ul>
-<li>Region Proposals : 비슷한 색깔, 텍스쳐를 기준으로 박스를 생성</li>
 <li>R-CNN : Region-based CNN. Region -&gt; CNN<ul>
 <li>문제점 : Region proposal 마다 CNN을 돌려서 시간이 매우 많이든다.</li>
 </ul>
 </li>
-<li>Fast R-CNN :<ul>
-<li>ddd</li>
+<li>Fast R-CNN : CNN -&gt; Region<ul>
+<li>문제점 : Region Proposal 과정에서 시간이 든다.</li>
+</ul>
+</li>
+<li>
+<p>Faster R-CNN : Region Proposals도 CNN을 이용해서 해보자.</p>
+</li>
+<li>
+<p>YOLO(You Only Look Once) : Detection as Regression</p>
+<ul>
+<li>성능은 Faster R-CNN보다 떨어지지만, 속도가 매우 빠르다.</li>
 </ul>
 </li>
 </ul>

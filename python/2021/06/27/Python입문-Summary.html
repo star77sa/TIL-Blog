@@ -153,11 +153,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#.split(',')">.split(&#39;,&#39;) </a></li>
 <li class="toc-entry toc-h4"><a href="#문자열-포맷팅">문자열 포맷팅 </a>
 <ul>
-<li class="toc-entry toc-h5"><a href="#표현식-(문자열에서-%연산자-사용)">표현식 (문자열에서 %연산자 사용) </a>
-<ul>
-<li class="toc-entry toc-h6"><a href="#.format-메서드">.format 메서드 </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h5"><a href="#표현식-(문자열에서-%연산자-사용)">표현식 (문자열에서 %연산자 사용) </a></li>
+<li class="toc-entry toc-h5"><a href="#.format-메서드">.format 메서드 </a></li>
+<li class="toc-entry toc-h5"><a href="#f-string-메서드">f-string 메서드 </a></li>
 </ul>
 </li>
 </ul>
@@ -1095,9 +1093,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h6 id=".format-메서드">
+<h5 id=".format-메서드">
 <a class="anchor" href="#.format-%EB%A9%94%EC%84%9C%EB%93%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>.format 메서드<a class="anchor-link" href="#.format-%EB%A9%94%EC%84%9C%EB%93%9C"> </a>
-</h6>
+</h5>
 </div>
 </div>
 </div>
@@ -1134,6 +1132,62 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h5 id="f-string-메서드">
+<a class="anchor" href="#f-string-%EB%A9%94%EC%84%9C%EB%93%9C" aria-hidden="true"><span class="octicon octicon-link"></span></a>f-string 메서드<a class="anchor-link" href="#f-string-%EB%A9%94%EC%84%9C%EB%93%9C"> </a>
+</h5>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'고경수'</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'이름=</span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">, 나이=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>이름=고경수, 나이=25
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>파이썬 3.6부터 사용할 수 있는 기능.</p>
+<ol>
+<li>문자열 맨 앞에(따옴표앞) f를 붙인다.</li>
+<li>사용하고 싶은 변수, 값을 중괄호 안에 넣는다.</li>
+<li>출력한다.</li>
+</ol>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

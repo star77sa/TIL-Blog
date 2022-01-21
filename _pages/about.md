@@ -36,7 +36,7 @@ AI 대학원 진학을 목표로 공부하고 있습니다.
 
 >## Experience
 
-- 통계학과 빅데이터 분석 경진대회 최우수상
+- 통계학과 빅데이터 분석 경진대회 최우수상 (2022.01)
 
 - Intern at Artificial Intelligence Laboratory, GIST (2022.01 ~ 2022.02)
 

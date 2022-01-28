@@ -186,16 +186,16 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>
-<p><strong>Image Classification:</strong> We are given a <strong>Training Set</strong> of labeled images, asked to predict labels on <strong>Test Set.</strong> Common to report the <strong>Accuracy</strong> of predictions(fraction of correctly predicted images)</p>
+<p><strong>Image Classification</strong>: 우리에겐 라벨링된 이미지의 트레이닝 셋이 주어지고, 테스트셋의 라벨을 예측해야한다. 흔히 Accuracy로 평가한다.(예측된 이미지의 정답비율)</p>
 </li>
 <li>
 <p>We introduced the <strong>k-Nearest Neighbor Classifier</strong>, 이는 트레이닝 셋에서 가장 가까운 이미지에 기반하여 예측을 한다.</p>
 </li>
 <li>
-<p>We saw that the choice of distance and the value of k are <strong>hyperparameters</strong> that are tuned using a <strong>validation set</strong>, or through <strong>cross-validation</strong> if the size of the data is small.</p>
+<p>우리는 <strong>validation set</strong>을 (데이터가 작을 때에는 <strong>cross-validation</strong>을) 사용하여 거리와 k의 값을 선택하는 즉 하이퍼파라미터를 튜닝하는것을 보았다.</p>
 </li>
 <li>
-<p>Once the best set of hyperparameters is chosen, the classifier is evaluated once on the test set, and reported as the performance of kNN on that data.</p>
+<p>최고의 하이퍼파라미터가 선택되면, 분류기는 테스트셋에서 평가되고 해당 데이터에서 kNN의 성능이라고 보고된다.</p>
 </li>
 </ul>
 

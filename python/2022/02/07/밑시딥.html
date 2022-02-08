@@ -204,9 +204,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>?</code> 왜 손실 함수를 설정하는가?</p>
 <ul>
-<li>신경망을 학습할 때 정확도를 지표로 삼아서는 안된다. 정확도를 지표로 하면 매개변수의 미분이 대부분의 장소에서 0이 되기 때문이다. --&gt; 손실함수 사용!</li>
+<li>
+<p><code>?</code> 왜 손실 함수를 설정하는가?</p>
+<p>신경망을 학습할 때 정확도를 지표로 삼아서는 안된다. 정확도를 지표로 하면 매개변수의 미분이 대부분의 장소에서 0이 되기 때문이다. --&gt; 손실함수 사용!</p>
+</li>
 </ul>
 
 </div>
@@ -217,6 +219,16 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>하이퍼파라미터 : 사람이 직접 설정해야 하는 매개변수. 그냥 매개변수와는 다르다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>교차 엔트로피 오차 : $ E = -\sum_k t_k logy_k $ 정답일 때의 출력이 전체 값을 정하게 된다. $t_k$가 정답에 해당하는 인덱스의 원소만 1이고 나머지는 0</li>
 </ul>
 
 </div>

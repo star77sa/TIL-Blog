@@ -139,6 +139,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#6.1-매개변수-갱신">6.1 매개변수 갱신 </a></li>
 <li class="toc-entry toc-h2"><a href="#6.2-가중치의-초깃값">6.2 가중치의 초깃값 </a></li>
+<li class="toc-entry toc-h2"><a href="#6.3-배치-정규화">6.3 배치 정규화 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -372,8 +373,18 @@ SGD와 비교하여 지그재그가 덜하다. 공이 그릇 바닥을 구르는
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>0으로 했을 때</li>
+<li>초깃값을 0으로 했을 때</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>학습이 올바르게 진행되지 않음.
+오차역전파법에서 모든 가중치의 값이 똑같이 갱신되기 때문.
+가중치를 여러 개 갖는 의미를 사라지게 한다. -&gt; 초깃값을 무작위로 설정해야 함!</p>
 
 </div>
 </div>
@@ -411,7 +422,29 @@ SGD와 비교하여 지그재그가 덜하다. 공이 그릇 바닥을 구르는
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>ReLU에 특화된 초깃값
-앞 계층의 노드가 n개일 때, 표준편차가 $\frac{2}{n}$xx</p>
+앞 계층의 노드가 n개일 때, 표준편차가 $\sqrt\frac{2}{n}$ 인 정규분포를 사용. ReLU는 음의 영역이 0이라서 더 넓게 분포시키기 위해 2배의 계수가 필요하다가 (직감적으로) 해석 가능</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.3-배치-정규화">
+<a class="anchor" href="#6.3-%EB%B0%B0%EC%B9%98-%EC%A0%95%EA%B7%9C%ED%99%94" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.3 배치 정규화<a class="anchor-link" href="#6.3-%EB%B0%B0%EC%B9%98-%EC%A0%95%EA%B7%9C%ED%99%94"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>가중치의 초깃값을 적절히 설정하면 각 층의 활성화값 분포가 적당히 퍼지면서 학습이 원활하게 수행.</p>
+<p>배치 정규화는 각 층이 활성화를 적당히 퍼뜨리도록 '강제'해보는 방법</p>
+</li>
+</ul>
 
 </div>
 </div>

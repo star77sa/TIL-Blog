@@ -140,6 +140,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#6.1-매개변수-갱신">6.1 매개변수 갱신 </a></li>
 <li class="toc-entry toc-h2"><a href="#6.2-가중치의-초깃값">6.2 가중치의 초깃값 </a></li>
 <li class="toc-entry toc-h2"><a href="#6.3-배치-정규화">6.3 배치 정규화 </a></li>
+<li class="toc-entry toc-h2"><a href="#6.4-바른-학습을-위해">6.4 바른 학습을 위해 </a></li>
+<li class="toc-entry toc-h2"><a href="#6.5-적절한-하이퍼파라미터-값-찾기">6.5 적절한 하이퍼파라미터 값 찾기 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -465,6 +467,81 @@ SGD와 비교하여 지그재그가 덜하다. 공이 그릇 바닥을 구르는
 <li>학습을 빨리 진행 가능</li>
 <li>초깃값에 크게 의존 X</li>
 <li>오버피팅 억제(드롭아웃 등의 필요성 감소)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.4-바른-학습을-위해">
+<a class="anchor" href="#6.4-%EB%B0%94%EB%A5%B8-%ED%95%99%EC%8A%B5%EC%9D%84-%EC%9C%84%ED%95%B4" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.4 바른 학습을 위해<a class="anchor-link" href="#6.4-%EB%B0%94%EB%A5%B8-%ED%95%99%EC%8A%B5%EC%9D%84-%EC%9C%84%ED%95%B4"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>가중치 감소</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>학습 과정에서 큰 가중치에 대해서는 그에 상응하는 큰 페널티를 부과하여 오버피팅을 억제.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>드롭아웃</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>훈련 때는 데이터를 흘릴 때마다 삭제할 뉴런을 무작위로 선택하고, 시험 때는 모든 뉴런에 신호를 전달</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.5-적절한-하이퍼파라미터-값-찾기">
+<a class="anchor" href="#6.5-%EC%A0%81%EC%A0%88%ED%95%9C-%ED%95%98%EC%9D%B4%ED%8D%BC%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EA%B0%92-%EC%B0%BE%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.5 적절한 하이퍼파라미터 값 찾기<a class="anchor-link" href="#6.5-%EC%A0%81%EC%A0%88%ED%95%9C-%ED%95%98%EC%9D%B4%ED%8D%BC%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EA%B0%92-%EC%B0%BE%EA%B8%B0"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>하이퍼파라미터의 성능을 평가할 때는 시험 데이터를 사용해서는 안된다.
+  따라서 하이퍼파라미터를 조정할 때는 하이퍼파라미터 전용 확인 데이터가 필요한데 이를 일반적으로 검증 데이터(validation data)라고 부른다.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>하이퍼 파라미터 값 탐색은 최적 값이 존재할 법한 범위를 점차 좁히면서 하는 것이 효과적</li>
 </ul>
 
 </div>

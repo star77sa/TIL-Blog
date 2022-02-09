@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -142,6 +142,16 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#6.3-배치-정규화">6.3 배치 정규화 </a></li>
 <li class="toc-entry toc-h2"><a href="#6.4-바른-학습을-위해">6.4 바른 학습을 위해 </a></li>
 <li class="toc-entry toc-h2"><a href="#6.5-적절한-하이퍼파라미터-값-찾기">6.5 적절한 하이퍼파라미터 값 찾기 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#7.-합성곱-신경망(CNN)">7. 합성곱 신경망(CNN) </a></li>
+<li class="toc-entry toc-h1"><a href="#8.-딥러닝">8. 딥러닝 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#8.1-더-깊게">8.1 더 깊게 </a></li>
+<li class="toc-entry toc-h2"><a href="#8.2-딥러닝의-초기역사">8.2 딥러닝의 초기역사 </a></li>
+<li class="toc-entry toc-h2"><a href="#8.3-더-빠르게(딥러닝-고속화)">8.3 더 빠르게(딥러닝 고속화) </a></li>
+<li class="toc-entry toc-h2"><a href="#8.4-딥러닝의-활용">8.4 딥러닝의 활용 </a></li>
+<li class="toc-entry toc-h2"><a href="#8.5-딥러닝의-미래">8.5 딥러닝의 미래 </a></li>
 </ul>
 </li>
 </ul><!--
@@ -543,6 +553,264 @@ SGD와 비교하여 지그재그가 덜하다. 공이 그릇 바닥을 구르는
 <ul>
 <li>하이퍼 파라미터 값 탐색은 최적 값이 존재할 법한 범위를 점차 좁히면서 하는 것이 효과적</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="7.-합성곱-신경망(CNN)">
+<a class="anchor" href="#7.-%ED%95%A9%EC%84%B1%EA%B3%B1-%EC%8B%A0%EA%B2%BD%EB%A7%9D(CNN)" aria-hidden="true"><span class="octicon octicon-link"></span></a>7. 합성곱 신경망(CNN)<a class="anchor-link" href="#7.-%ED%95%A9%EC%84%B1%EA%B3%B1-%EC%8B%A0%EA%B2%BD%EB%A7%9D(CNN)"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="8.-딥러닝">
+<a class="anchor" href="#8.-%EB%94%A5%EB%9F%AC%EB%8B%9D" aria-hidden="true"><span class="octicon octicon-link"></span></a>8. 딥러닝<a class="anchor-link" href="#8.-%EB%94%A5%EB%9F%AC%EB%8B%9D"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>?</code> optimizer(손실함수 가중치 최적화)가 사용되는 시점은 언제?</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.1-더-깊게">
+<a class="anchor" href="#8.1-%EB%8D%94-%EA%B9%8A%EA%B2%8C" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.1 더 깊게<a class="anchor-link" href="#8.1-%EB%8D%94-%EA%B9%8A%EA%B2%8C"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>데이터 확장(data augmentation)은 입력 이미지(훈련 이미지)를 알고리즘을 동원해 '인위적'으로 확장.</p>
+<p>미세한 변화를 주어 이미지의 개수를 늘리는 것. 데이터가 몇 개 없을 때 특히 효과적</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>층을 깊게 할 때의 이점 :</p>
+<ol>
+<li>
+<p>신경망의 매개변수 수가 줄어든다. (5x5의 합성곱 연산 1회는 3x3 합성곱 연산을 2회 수행하여 대체가능)</p>
+<p>전자의 매개변수 수가 25개(5x5)인 반면 후자는 총 18개 (2x3x3)이며, 매개변수 수는 층을 반복할수록 적어진다.</p>
+</li>
+<li>
+<p>학습의 효율성 : 층을 깊게 함으로써 학습 데이터의 양을 줄여 학습을 고속으로 수행 가능.</p>
+</li>
+<li>
+<p>정보를 계층적으로 전달할 수 있다. : 층을 깊이 함으로써 각 층이 학습해야 할 문제를 '풀기 쉬운 단순한 문제'로 분해할 수  있어 효율적으로 학습 가능</p>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.2-딥러닝의-초기역사">
+<a class="anchor" href="#8.2-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EC%B4%88%EA%B8%B0%EC%97%AD%EC%82%AC" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.2 딥러닝의 초기역사<a class="anchor-link" href="#8.2-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EC%B4%88%EA%B8%B0%EC%97%AD%EC%82%AC"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>VGG</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>GoogLeNet</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>ResNet</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>층이 지나치게 깊으면 학습이 잘 되지 않고, 오히려 성능이 떨어지기도함. ResNet에서는 그런 문제를 해결하기 위해서 스킵 연결(skip connection)을 도입</p>
+<p>스킵 연결이란 입력 데이터를 합성곱 계층을 건너뛰어 출력에 바로 더하는 구조</p>
+<p>층의 깊이에 비례해 성능을 향상시킬 수 있게 한 핵심</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.3-더-빠르게(딥러닝-고속화)">
+<a class="anchor" href="#8.3-%EB%8D%94-%EB%B9%A0%EB%A5%B4%EA%B2%8C(%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B3%A0%EC%86%8D%ED%99%94)" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.3 더 빠르게(딥러닝 고속화)<a class="anchor-link" href="#8.3-%EB%8D%94-%EB%B9%A0%EB%A5%B4%EA%B2%8C(%EB%94%A5%EB%9F%AC%EB%8B%9D-%EA%B3%A0%EC%86%8D%ED%99%94)"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.4-딥러닝의-활용">
+<a class="anchor" href="#8.4-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%ED%99%9C%EC%9A%A9" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.4 딥러닝의 활용<a class="anchor-link" href="#8.4-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%ED%99%9C%EC%9A%A9"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>사물 검출</p>
+<p>이미지 속에 담긴 사물의 위치와 종류(클래스)를 알아내는 기술</p>
+<p>R-CNN</p>
+<p>입력 이미지 -&gt; 후보영역 추출 -&gt; CNN 특징 계산 -&gt; 영역분류</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>분할(Segmentation)</p>
+<p>이미지를 픽셀 수준에서 분류하는 문제</p>
+<p>가장 단순한 방법 : 모든 픽셀을 각각 추론(긴 시간이 걸림) -&gt; FCN(Fully Convolutional Network)가 고안 : 단 한번의 forward 처리로 모든 픽셀의 클래스를 분류해주는 기법</p>
+<p>일반적인 CNN이 완전연결 계층(Fully connected layer)을 이용하는 반면 FCN은 이 완전연결 계층을 '같은 기능을 하는 합성곱 계층'으로 바꾼다.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>사진 캡션 생성</p>
+<p>사진을 주면 그 사진을 설명하는 글(사진 캡션)을 자동으로 생성하는 연구</p>
+<p>컴퓨터 비전과 자연어를 융합</p>
+</li>
+</ol>
+<ul>
+<li>멀티모달 처리 : 사진이나 자연어와 같은 여러 종류의 정보를 조합하고 처리하는 것</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="8.5-딥러닝의-미래">
+<a class="anchor" href="#8.5-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EB%AF%B8%EB%9E%98" aria-hidden="true"><span class="octicon octicon-link"></span></a>8.5 딥러닝의 미래<a class="anchor-link" href="#8.5-%EB%94%A5%EB%9F%AC%EB%8B%9D%EC%9D%98-%EB%AF%B8%EB%9E%98"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>이미지 스타일(화풍) 변환</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>이미지 생성</p>
+<p>GAN</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>자율 주행</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>
+<p>Deep Q-Netwrok(강화학습)</p>
+<p>사람이 시행착오를 겪으며 배우듯 컴퓨터도 시행착오 과정에서 스스로 학습하게 하려는 분야</p>
+<p>'가르침'에 의존하는 '지도 학습'과는 다른 분야</p>
+</li>
+</ol>
 
 </div>
 </div>

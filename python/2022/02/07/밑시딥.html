@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -153,6 +153,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#7.2-합성곱-계층">7.2 합성곱 계층 </a></li>
 <li class="toc-entry toc-h2"><a href="#7.3-풀링-계층">7.3 풀링 계층 </a></li>
+<li class="toc-entry toc-h2"><a href="#7.6-CNN-시각화하기">7.6 CNN 시각화하기 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#8.-딥러닝">8. 딥러닝 </a>
@@ -714,6 +715,84 @@ SGD와 비교하여 지그재그가 덜하다. 공이 그릇 바닥을 구르는
 <h2 id="7.3-풀링-계층">
 <a class="anchor" href="#7.3-%ED%92%80%EB%A7%81-%EA%B3%84%EC%B8%B5" aria-hidden="true"><span class="octicon octicon-link"></span></a>7.3 풀링 계층<a class="anchor-link" href="#7.3-%ED%92%80%EB%A7%81-%EA%B3%84%EC%B8%B5"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>풀링 : 가로·세로 방향의 공간을 줄이는 연산</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>최대 풀링(max pooling) : 해당 영역의 최댓값을 구하는 연산. 이미지 인식 분야에서는 주로 최대 풀링을 사용</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>풀링의 윈도우 크기와 스트라이드는 같은 값으로 설정하는 것이 보통. 예를 들어 윈도우가 3x3이면 스트라이드는 3으로.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>풀링 계층의 특징 :</p>
+<p>학습해야 할 매개변수가 없다.</p>
+<p>채널 수가 변하지 않는다</p>
+<p>입력의 변화에 영향을 적게 받는다(강건하다)</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>im2col : 입력 데이터를 필터링(가중치 계산)하기 좋게 전개하는 함수</p>
+<p>3차원 입력 데이터에 im2col을 적용하면 2차원 행렬로 바뀐다.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.6-CNN-시각화하기">
+<a class="anchor" href="#7.6-CNN-%EC%8B%9C%EA%B0%81%ED%99%94%ED%95%98%EA%B8%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>7.6 CNN 시각화하기<a class="anchor-link" href="#7.6-CNN-%EC%8B%9C%EA%B0%81%ED%99%94%ED%95%98%EA%B8%B0"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>에지 : 색상이 바뀐 경계선</li>
+<li>블롭 : 국소적으로 덩어리진 영역</li>
+</ul>
+
 </div>
 </div>
 </div>

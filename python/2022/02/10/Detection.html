@@ -279,9 +279,28 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>R-CNN에서는 가장 먼저 Region Proposal 단계에서 "물체가 있을 법한 영역"을 찾는다.</p>
+<p>이는 위에서 말했듯이 기존의 Sliding window방식의 비효율성을 극복하기 위한 것이다.</p>
+<p>먼저 기존의 Sliding window가 무엇인지 살펴보자.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sliding-Window">
 <a class="anchor" href="#Sliding-Window" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sliding Window<a class="anchor-link" href="#Sliding-Window"> </a>
 </h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sliding window방식은 이미지에서 물체를 찾기 위해 window의 (크기, 비율)을 임의로 마구 바꿔가면서
+모든 영역에 대해서 탐색하는 것이다.</p>
+
 </div>
 </div>
 </div>
@@ -295,6 +314,14 @@ window.onload = wrap_img;
     
 </figure>
 </p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sliding Window 좌 : 모든 영역에 대해 탐색 / 우 : 크기와 비율을 변형</p>
 
 </div>
 </div>
@@ -322,14 +349,23 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>참고 사이트 : <a href="https://ganghee-lee.tistory.com/35">https://ganghee-lee.tistory.com/35</a></p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
-</div>
-</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -146,7 +146,14 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#단점">단점 </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#2.-Fast-R-CNN-(2014)">2. Fast R-CNN (2014) </a></li>
+<li class="toc-entry toc-h1"><a href="#2.-Fast-R-CNN-(2014)">2. Fast R-CNN (2014) </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Introdection">Introdection </a></li>
+<li class="toc-entry toc-h2"><a href="#Fast-R-CNN">Fast R-CNN </a></li>
+<li class="toc-entry toc-h2"><a href="#Spatial-Pyramid-Pooling(SPP)">Spatial Pyramid Pooling(SPP) </a></li>
+<li class="toc-entry toc-h2"><a href="#RoI-Pooling">RoI Pooling </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#3.-Faster-R-CNN-(2015)">3. Faster R-CNN (2015) </a></li>
 </ul><!--
 #################################################
@@ -202,7 +209,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>" R-CNN 프로세스 "</p>
+<p><strong>" R-CNN 프로세스 "</strong></p>
 
 </div>
 </div>
@@ -516,6 +523,184 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introdection">
+<a class="anchor" href="#Introdection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introdection<a class="anchor-link" href="#Introdection"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fast R-CNN은 이전 R-CNN의 한계점을 극복하고자 나왔다. R-CNN는 이전 글에서 언급했듯이</p>
+<p>1) RoI (Region of Interest) 마다 CNN연산을 함으로써 속도저하</p>
+<p>2) multi-stage pipelines으로써 모델을 한번에 학습시키지 못함</p>
+<p>다음과 같은 한계점들이 있었다.</p>
+<p>그리고 Fast R-CNN에서는 다음 두 가지를 통해 위 한계점들을 극복했다.</p>
+<p>1) RoI pooling</p>
+<p>2) CNN 특징 추출부터 classification, bounding box regression까지 하나의 모델에서 학습</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fast-R-CNN">
+<a class="anchor" href="#Fast-R-CNN" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fast R-CNN<a class="anchor-link" href="#Fast-R-CNN"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/img/Detection/fastrcnn/fastrcnn.png" alt="" style="max-width: 500px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>"Fast R-CNN 프로세스"</strong></p>
+<p>1-1. R-CNN에서와 마찬가지로 Selective Search를 통해 RoI를 찾는다.</p>
+<p>1-2. 전체 이미지를 CNN에 통과시켜 feature map을 추출한다.</p>
+<ol>
+<li>
+<p>Selective Search로 찾았었던 RoI를 feature map크기에 맞춰서 projection시킨다.</p>
+</li>
+<li>
+<p>projection시킨 RoI에 대해 RoI Pooling을 진행하여 고정된 크기의 feature vector를 얻는다.</p>
+</li>
+<li>
+<p>feature vector는 FC layer를 통과한 뒤, 두 브랜치로 나뉘게 된다.</p>
+</li>
+</ol>
+<p>5-1. 하나는 softmax를 통과하여 RoI에 대해 object classification을 한다.</p>
+<p>5-2. bounding box regression을 통해 selective search로 찾은 box의 위치를 조정한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fast R-CNN의 가장 핵심적인 아이디어는 RoI Pooling이다.</p>
+<p>R-CNN에서 CNN output이 FC layer의 input으로 들어가야했기 때문에 CNN input을 동일 size로 맞춰줘야 했다.</p>
+<p>따라서 원래 이미지에서 추출한 RoI를 crop, warp을 통해 동일 size로 조정했었다.</p>
+<p>그러나 실제로 "FC layer의 input이 고정인거지 CNN input은 고정이 아니다"</p>
+<p>따라서 CNN에는 입력 이미지 크기, 비율 관계없이 input으로 들어갈 수 있고</p>
+<p>FC layer의 input으로 들어갈때만 size를 맞춰주기만 하면된다.</p>
+<p>여기서 Spatial Pyramid Pooling(SPP)이 제안된다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Spatial-Pyramid-Pooling(SPP)">
+<a class="anchor" href="#Spatial-Pyramid-Pooling(SPP)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spatial Pyramid Pooling(SPP)<a class="anchor-link" href="#Spatial-Pyramid-Pooling(SPP)"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/img/Detection/fastrcnn/spp.png" alt="" style="max-width: 500px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>SPP에서는 먼저 이미지를 CNN에 통과시켜 feature map을 추출한다.</p>
+<p>그리고 미리 정해진 4x4, 2x2, 1x1 영역의 피라미드로 feature map을 나눠준다. 피라미드 한칸을 bin이라 한다.</p>
+<p>bin내에서 max pooling을 적용하여 각 bin마다 하나의 값을 추출하고,</p>
+<p>최종적으로 피라미드 크기만큼 max값을 추출하여 3개의 피라미드의 결과를 쭉 이어붙여 고정된 크기 vector를 만든다.</p>
+<p>정리하자면,</p>
+<p>4x4, 2x2, 1x1 세 가지 피라미드가 존재하고, max pooling을 적용하여 각 피라미드 크기에 맞게 max값을 뽑아낸다.</p>
+<p>각 피라미드 별로 뽑아낸 max값들을 쭉 이어붙여 고정된 크기 vector를 만들고 이게 FC layer의 input으로 들어간다.</p>
+<p>따라서 CNN을 통과한 feature map에서 2천개의 region proposal을 만들고 region proposal마다</p>
+<p>SPPNet에 집어넣어 고정된 크기의 feature vector를 얻어낸다.</p>
+<p><strong>이 작업을 통해 모든 2천개의 region proposal마다 해야했던 2천번의 CNN연산이 1번으로 줄었다.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="RoI-Pooling">
+<a class="anchor" href="#RoI-Pooling" aria-hidden="true"><span class="octicon octicon-link"></span></a>RoI Pooling<a class="anchor-link" href="#RoI-Pooling"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>다시 돌아와 Fast R-CNN에서 이 SPP가 적용되는 것을 보면 다음과 같다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/img/Detection/fastrcnn/fastrcnn2.png" alt="" style="max-width: 500px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>실제로 Fast R-CNN에서는 1개의 피라미드를 적용시킨 SPP로 구성되어있다. 또한 피라미드의 사이즈는 7x7이다.</p>
+<p>Fast R-CNN에서 적용된 1개의 피라미드 SPP로 고정된 크기의 feature vector를 만드는과정을 <strong>RoI Pooling</strong>이라 한다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/TIL-Blog/images/copied_from_nb/img/Detection/fastrcnn/roi.png" alt="" style="max-width: 500px">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
 <h1 id="3.-Faster-R-CNN-(2015)">
 <a class="anchor" href="#3.-Faster-R-CNN-(2015)" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Faster R-CNN (2015)<a class="anchor-link" href="#3.-Faster-R-CNN-(2015)"> </a>
 </h1>

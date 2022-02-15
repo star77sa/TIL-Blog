@@ -276,18 +276,16 @@ window.onload = wrap_img;
 <ul>
 <li>
 <ol>
-<li>Region Proposal : "Object가 있을법한 영역"을 찾는 모듈 (기존의 Sliding window방식의 비효율성 극복)</li>
-</ol>
-</li>
 <li>
+<p>Region Proposal : "Object가 있을법한 영역"을 찾는 모듈 (기존의 Sliding window방식의 비효율성 극복)</p>
 <ol>
-<li>CNN : 각각의 영역으로부터 고정된 크기의 Feature Vector를 뽑아낸다.</li>
-</ol>
-</li>
 <li>
-<ol>
+<p>CNN : 각각의 영역으로부터 고정된 크기의 Feature Vector를 뽑아낸다.</p>
+</li>
 <li>
 <p>SVM : Classification을 위한 선형 지도학습 모델</p>
+</li>
+</ol>
 <p><code>?</code> 왜 Classifier로 Softmax를 쓰지 않고 SVM을 사용했을까? : CNN fine-tuning을 위한 학습 데이터가 시기상 많지 않아서 Softmax를 적용시키면 오히려 성능이 낮아져 SVM을 사용</p>
 </li>
 </ol>

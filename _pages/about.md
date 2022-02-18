@@ -18,10 +18,11 @@ permalink: /about/
 
 - Intern at Artificial Intelligence Laboratory, GIST (2022.01 ~ 2022.02)
 
+- 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 (2021.04 ~ 2021.06)
+
+>## Experience
 
 - 2021 데이터 크리에이터 캠프 예선 2위 (2021.10.30)
-
-- 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 (2021.04 ~ 2021.06)
 
 - 2020 동계 어학연수 참여(University of San Jose) (2021.01 ~ 2021.02)
 
@@ -29,16 +30,13 @@ permalink: /about/
 
 - 핀테크 앱 서비스 '티클리안' 서포터즈 1기 (2020.02 ~ 2020.03) 
  
- 
 >## Reward
 
 - 통계학과 빅데이터 분석 경진대회 최우수상 (2022.01)
 
 - 2021 데이터 크리에이터 캠프 최우수상 (2021.11.20)
 
->## Programming Skill
- 
- 
+
 >## Project
 
 - [Deep Learning based Missing Teeth Detection]

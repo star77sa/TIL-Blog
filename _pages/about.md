@@ -39,8 +39,7 @@ permalink: /about/
 
 >## Project
 
-- [Deep Learning based Missing Teeth Detection]
-(https://github.com/star77sa/Missing_Tooth_Detection)
+- [Deep Learning based Missing Teeth Detection](https://github.com/star77sa/Missing_Tooth_Detection)
 
 - 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
 

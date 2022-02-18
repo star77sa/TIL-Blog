@@ -9,37 +9,15 @@ permalink: /about/
 
 - Email : star77sa@naver.com
 
-- 학력 : 전북대학교 통계학, 컴퓨터공학 (3-2 재)
+>## Education
 
-<!-- ## 수상 -->
-<!-- `-` --> 
-
-> ## Project
-
-- 랜드마크 이미지 분류 (2021 Data Creater Camp 본선)
-
-- 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
-
-- [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
-
-- [네이버 영화 사이트 크롤링 및 분석](https://github.com/star77sa/Naver_Movie_Rank_1-2000)
-
->## Programming Skill
+- 전북대학교 통계학, 컴퓨터공학 (3-2 재)
 
 
-- Python
-
-- R
-
-- C / C++
-
->## Experience
+>## Work Experience
 
 - Intern at Artificial Intelligence Laboratory, GIST (2022.01 ~ 2022.02)
 
-- 통계학과 빅데이터 분석 경진대회 최우수상 (2022.01)
-
-- 2021 데이터 크리에이터 캠프 본선 최우수상 (2021.11.20)
 
 - 2021 데이터 크리에이터 캠프 예선 2위 (2021.10.30)
 
@@ -51,6 +29,38 @@ permalink: /about/
 
 - 핀테크 앱 서비스 '티클리안' 서포터즈 1기 (2020.02 ~ 2020.03) 
  
+ 
+>## Reward
+
+- 통계학과 빅데이터 분석 경진대회 최우수상 (2022.01)
+
+- 2021 데이터 크리에이터 캠프 최우수상 (2021.11.20)
+
+>## Programming Skill
+ 
+ 
+>## Project
+
+- [Deep Learning based Missing Teeth Detection]
+(https://github.com/star77sa/Missing_Tooth_Detection)
+
+- 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
+
+- [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)
+
+
+
+>## Programming Skill
+
+
+- Python
+
+- R
+
+- C / C++
+
+
+
 <!-- #### **[WebCV](https://star77sa.github.io/)** [^1]. -->
 
 

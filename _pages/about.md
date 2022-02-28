@@ -11,7 +11,7 @@ permalink: /about/
 
 >## Education
 
-- 전북대학교 통계학, 컴퓨터공학 (3-2 재)
+- 전북대학교 통계학, 컴퓨터공학 3학년 재학중
 
 
 >## Work Experience
@@ -32,7 +32,7 @@ permalink: /about/
  
 >## Reward
 
-- 2022 데이터톤 경진대회 대상(2022.02.23 ~ 2022.02.25)
+- 2022 데이터톤 경진대회 대상 (2022.02.23 ~ 2022.02.25)
 
 - 통계학과 빅데이터 분석 경진대회 최우수상 (2022.01.17 ~ 2022.01.19)
 
@@ -40,6 +40,8 @@ permalink: /about/
 
 
 >## Project
+
+- [인터넷 사용자의 MBTI 예측(2022 데이터톤 경진대회)](https://github.com/star77sa/Dataton_Competition_2022)
 
 - [Deep Learning based Missing Teeth Detection](https://github.com/star77sa/Missing_Tooth_Detection)
 

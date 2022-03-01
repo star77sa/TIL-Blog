@@ -45,6 +45,8 @@ permalink: /about/
 
 - [Deep Learning based Missing Teeth Detection](https://github.com/star77sa/Missing_Tooth_Detection)
 
+- [(2022 전북대학교 통계학과 빅데이터 분석 경진대회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022)
+
 - 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
 
 - [구내식당 식수인원 예측 AI 경진대회(Dacon)](https://github.com/star77sa/DACON-The_number_of_diners_in_the_cafeteria_Prediction)

@@ -45,7 +45,7 @@ permalink: /about/
 
 - [Deep Learning based Missing Teeth Detection](https://github.com/star77sa/Missing_Tooth_Detection)
 
-- [지하철 혼잡도와 미세먼지와의 상관관계 분석(2022 전북대학교 통계학과 빅데이터 분석 경진대회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022)
+- [지하철 혼잡도와 미세먼지와의 상관관계 분석(2022 전북대 통계학과 빅데이터 분석 경진대회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022)
 
 - 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
 

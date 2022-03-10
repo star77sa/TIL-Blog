@@ -29,7 +29,9 @@ permalink: /about/
 
 >## Experience
 
-- 2021 데이터 크리에이터 캠프 예선 2위 (2021.10.30)
+- BigContest 홍수 유입량 예측 경진대회 참가
+
+- Dacon 구내식당 식수인원 예측 AI 경진대회 참가
 
 - 2020 동계 어학연수 참여(University of San Jose) (2021.01 ~ 2021.02)
 

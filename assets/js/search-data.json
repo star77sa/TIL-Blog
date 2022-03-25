@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Graph",
-            "content": ".",
+            "content": ". 1. &#48708;&#51221;&#54805;&#51088;&#47308;&#50640;&#49436;&#51032; &#45796;&#51473;&#52377;&#46020;&#48169;&#48277; &#50672;&#44396; . 지금까지의 통계 및 기계학습 방법은 주로 유클리드 자료를 분석하는데 집중 | . 빅데이터 시대가 도래함에 따라 세상에는 그래프, 매니폴드와 같은 비유클리드 자료가 빠른 속도로 축적 | . 비유클리드 자료 : 벡터공간구조를 가지지 않아 그리드나 배열형태로 저장할 수 없는 자료들을 통칭 | . -(유클리드) digits, time-series, audio, acoustics, images, natural language ... -(비유클리드) 3D point cloud data(manifold data), molecules, gene expression data, social networks, e-commerce networks, traffic data ... . 비유클리드 자료를 분석하는 것은 매우 중요한 일이지만 분석하는 것은 쉽지않다. 유클리드자료에서 당연하게 정의할 수 있는 개념들이 쉽게 일반화되지 않기 때문. | .",
             "url": "https://star77sa.github.io/TIL-Blog/graph/2022/03/25/Graph.html",
             "relUrl": "/graph/2022/03/25/Graph.html",
             "date": " • Mar 25, 2022"

@@ -25,7 +25,7 @@ permalink: /about/
 
 >## Work Experience
 
-- Intern at Artificial Intelligence Laboratory, GIST ('22.01 ~ '22.02)
+- GIST Artificial Intelligence Laboratory 인턴 ('22.01 ~ '22.02)
 
 - 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 ('21.04 ~ '21.06)
 

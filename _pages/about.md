@@ -31,6 +31,8 @@ permalink: /about/
 
 >## Experience
 
+- 전북대학교 자연과학대학 빅데이터 동아리 멘토(`22)
+
 - BigContest 홍수 유입량 예측 경진대회 참가
 
 - Dacon 구내식당 식수인원 예측 AI 경진대회 참가

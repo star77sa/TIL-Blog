@@ -94,7 +94,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -141,8 +141,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#기존대비-얼마나-효과가-있는지?">기존대비 얼마나 효과가 있는지? </a></li>
 <li class="toc-entry toc-h2"><a href="#장/단점은-무엇인지?">장/단점은 무엇인지? </a></li>
 <li class="toc-entry toc-h2"><a href="#이-방법론이-실제-어디에-활용될-수-있는지?">이 방법론이 실제 어디에 활용될 수 있는지? </a></li>
-<li class="toc-entry toc-h2"><a href="#본-연구의-방법론에-문제점은-없다고-생각하는가?">본 연구의 방법론에 문제점은 없다고 생각하는가? </a></li>
-<li class="toc-entry toc-h2"><a href="#~~가-의미하는-바가-무엇인가?">~~가 의미하는 바가 무엇인가? </a></li>
+<li class="toc-entry toc-h2"><a href="#본-연구의-방법론에-문제점은-없다고-생각하는가?-/-한계점은-무엇인가?">본 연구의 방법론에 문제점은 없다고 생각하는가? / 한계점은 무엇인가? </a></li>
 <li class="toc-entry toc-h2"><a href="#표제어-추출(Lemmatization)이란?">표제어 추출(Lemmatization)이란? </a></li>
 <li class="toc-entry toc-h2"><a href="#불용어란?">불용어란? </a></li>
 <li class="toc-entry toc-h2"><a href="#TF-IDF-벡터화란?">TF-IDF 벡터화란? </a></li>
@@ -265,6 +264,20 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>장점:</p>
+<p>하이퍼 파라미터 튜닝 부분에서의 장점은 그리드 서치로 모든 범위를 탐색하는 것은 너무 많은 비용이 든다.
+강화학습을 섞은 이 방법을 사용하면, 넓은 범위에서 그리드 서치로 1차 탐색 후 좁은 범위에서 강화학습으로 2차 학습을 진행함으로써
+좀 더 적은 비용으로 효율적으로 하이퍼 파라미터를 찾을 수 있다.</p>
+<p>단점:</p>
+<p>Local maximum에 빠질 수 있다. 그리드 서치로 전 범위를 탐색했다면 발견했을 Global maximum을 놓칠 수 있다. (정확도를 기준으로 하므로 maximum)
+다만 전 범위를 탐색했다면 어마어마한 비용 감당해야하지만 이 방법은 적은 비용으로 적당한 수준의 Local maximum을 얻는 방식으로 타협 가능하다.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="이-방법론이-실제-어디에-활용될-수-있는지?">
 <a class="anchor" href="#%EC%9D%B4-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%9D%B4-%EC%8B%A4%EC%A0%9C-%EC%96%B4%EB%94%94%EC%97%90-%ED%99%9C%EC%9A%A9%EB%90%A0-%EC%88%98-%EC%9E%88%EB%8A%94%EC%A7%80?" aria-hidden="true"><span class="octicon octicon-link"></span></a>이 방법론이 실제 어디에 활용될 수 있는지?<a class="anchor-link" href="#%EC%9D%B4-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%9D%B4-%EC%8B%A4%EC%A0%9C-%EC%96%B4%EB%94%94%EC%97%90-%ED%99%9C%EC%9A%A9%EB%90%A0-%EC%88%98-%EC%9E%88%EB%8A%94%EC%A7%80?"> </a>
 </h2>
@@ -274,18 +287,22 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="본-연구의-방법론에-문제점은-없다고-생각하는가?">
-<a class="anchor" href="#%EB%B3%B8-%EC%97%B0%EA%B5%AC%EC%9D%98-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%97%90-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EC%97%86%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94%EA%B0%80?" aria-hidden="true"><span class="octicon octicon-link"></span></a>본 연구의 방법론에 문제점은 없다고 생각하는가?<a class="anchor-link" href="#%EB%B3%B8-%EC%97%B0%EA%B5%AC%EC%9D%98-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%97%90-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EC%97%86%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94%EA%B0%80?"> </a>
-</h2>
+<p>MBTI 데이터를 기준으로 한다면 OTT서비스의 마케팅, 기업체 채용시 자기소개서 등을 통한 MBTI 추정 등에 쓰일 수 있다.'</p>
+<p>하이퍼 파라미터 튜닝법을 기준으로 한다면, 하이퍼 파라미터 튜닝이 필요한 모든 데이터에 적용할 수 있다고 생각한다.</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="~~가-의미하는-바가-무엇인가?">
-<a class="anchor" href="#~~%EA%B0%80-%EC%9D%98%EB%AF%B8%ED%95%98%EB%8A%94-%EB%B0%94%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80?" aria-hidden="true"><span class="octicon octicon-link"></span></a>~~가 의미하는 바가 무엇인가?<a class="anchor-link" href="#~~%EA%B0%80-%EC%9D%98%EB%AF%B8%ED%95%98%EB%8A%94-%EB%B0%94%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80?"> </a>
+<h2 id="본-연구의-방법론에-문제점은-없다고-생각하는가?-/-한계점은-무엇인가?">
+<a class="anchor" href="#%EB%B3%B8-%EC%97%B0%EA%B5%AC%EC%9D%98-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%97%90-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EC%97%86%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94%EA%B0%80?-/-%ED%95%9C%EA%B3%84%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80?" aria-hidden="true"><span class="octicon octicon-link"></span></a>본 연구의 방법론에 문제점은 없다고 생각하는가? / 한계점은 무엇인가?<a class="anchor-link" href="#%EB%B3%B8-%EC%97%B0%EA%B5%AC%EC%9D%98-%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%97%90-%EB%AC%B8%EC%A0%9C%EC%A0%90%EC%9D%80-%EC%97%86%EB%8B%A4%EA%B3%A0-%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94%EA%B0%80?-/-%ED%95%9C%EA%B3%84%EC%A0%90%EC%9D%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80?"> </a>
 </h2>
+<p>본 연구는 영어로 된 문장들을 사용하여 진행되었다. 하지만 한글과 영어의 텍스트 처리에 많은 차이가 있으며 한글의 텍스트 처리가 훨씬 어렵다.
+예를들어 영어는 단어 단위로 띄어쓰기가 이루어져서 띄어쓰기를 기준으로 토큰화를 진행해도 되지만 한글의 경우 조사, 어미등이 붙기 때문에 처리 과정 자체가 다르다.
+즉, 본 연구의 프로세스로 한글 데이터에 곧바로 적용하는 것은 어렵다. 한글에 적용하는 연구는 추후 진행해볼 예정이 있다.</p>
+
 </div>
 </div>
 </div>

@@ -19,7 +19,9 @@ permalink: /about/
 
 - 2022 데이터톤 경진대회 대상 ('22.02.23 ~ '22.02.25)
 
-- 통계학과 빅데이터 분석 경진대회 최우수상 ('22.01.17 ~ '22.01.19)
+- 통계학과 빅데이터 분석 경진대회 1회 최우수상 ('22.01.17 ~ '22.01.19)
+
+- 통계학과 빅데이터 분석 경진대회 2회 우수상 ('22.07.01 ~ '22.07.04)
 
 - 2021 데이터 크리에이터 캠프 최우수상 ('21.11.20)
 
@@ -35,25 +37,29 @@ permalink: /about/
 
 - 광주과학기술원(GIST) AI Lab 인턴 ('22.01 ~ '22.02)
 
-- 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 ('21.04 ~ '21.06)
-
 >## Experience
+
+- 한국통계학회 2022년 하계학술논문발표회 포스터논문 발표
 
 - 네이버 커넥츠 소프트웨어야 놀자 대학생 멘토
 
 - 2022 COSS 빅데이터 혁신공유대학 서포터즈
 
+- 전북대학교 혁신교육개발원 학습튜터링(통계수학) 멘토
+
+- 전북대학교 혁신교육개발원 BSM클리닉 수학 조교 ('21.04 ~ '21.06)
+
 - 전북대학교 자연과학대학 빅데이터 동아리 멘토('22)
-
-- BigContest 홍수 유입량 예측 경진대회 참가
-
-- Dacon 구내식당 식수인원 예측 AI 경진대회 참가
 
 - 2020 동계 어학연수 참여(University of San Jose) ('21.01 ~ '21.02)
 
 - 핀테크 앱 서비스 '티클리안' 서포터즈 1기 ('20.02 ~ '20.03) 
 
 - 취약계층을 위한 라면 나눔행사 지원 봉사활동 등 봉사활동 19건 44시간
+
+- BigContest 홍수 유입량 예측 경진대회 참가
+
+- Dacon 구내식당 식수인원 예측 AI 경진대회 참가
 
 
 >## Project
@@ -62,7 +68,9 @@ permalink: /about/
 
 - [Deep Learning based Missing Teeth Detection](https://github.com/star77sa/Missing_Tooth_Detection)
 
-- [지하철 혼잡도와 미세먼지와의 상관관계 분석(2022 전북대 통계학과 빅데이터 분석 경진대회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022)
+- [코로나 19 기사분류 및 기사 긍·부정 분류(2022 전북대 통계학과 빅데이터 분석 경진대회 2회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022_Summer)
+
+- [지하철 혼잡도와 미세먼지와의 상관관계 분석(2022 전북대 통계학과 빅데이터 분석 경진대회 1회)](https://github.com/star77sa/Stat_Bigdata_analysis_Competition_2022_Winter)
 
 - 퓨쳐스리그 홍수ZERO 댐 유입량 예측(BigContest)
 

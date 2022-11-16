@@ -4,6 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
+- 
 
 - Name : 고경수
 
